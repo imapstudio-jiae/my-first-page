@@ -58,6 +58,9 @@ export default function Home() {
             안녕하세요, 김지애입니다
           </span>
         </h1>
+        <p className="mt-3 text-lg font-medium text-center" style={{ color: "#FFC300" }}>
+          만나서 반갑습니다! 제 첫 웹페이지에 오신 것을 환영합니다.
+        </p>
 
         {/* moon.jpg — 제목 바로 아래, 달과 별이 잘 보이는 사이즈 */}
         <div
