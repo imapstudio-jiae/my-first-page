@@ -1,4 +1,6 @@
 import InteractiveDemo from "@/components/interactive-demo";
+import InquiryModal from "@/components/inquiry-modal";
+import InquiryTriggerButton from "@/components/inquiry-trigger-button";
 
 export default function Home() {
   return (
@@ -8,7 +10,7 @@ export default function Home() {
     >
       {/* Header */}
       <header
-        className="border-b backdrop-blur sticky top-0 z-50"
+        className="border-b backdrop-blur sticky top-0 z-40"
         style={{ borderColor: "#06D6A020", backgroundColor: "#00356690" }}
       >
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -23,12 +25,15 @@ export default function Home() {
               my_first_page
             </span>
           </div>
-          <div
-            className="flex items-center gap-2 px-3 py-1 rounded-full border text-xs font-medium"
-            style={{ borderColor: "#06D6A040", backgroundColor: "#06D6A010", color: "#06D6A0" }}
-          >
-            <span className="h-1.5 w-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#06D6A0" }} />
-            macOS Ready
+          <div className="flex items-center gap-2.5">
+            <InquiryTriggerButton variant="header" label="문의하기" />
+            <div
+              className="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full border text-xs font-medium"
+              style={{ borderColor: "#06D6A040", backgroundColor: "#06D6A010", color: "#06D6A0" }}
+            >
+              <span className="h-1.5 w-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#06D6A0" }} />
+              macOS Ready
+            </div>
           </div>
         </div>
       </header>
@@ -143,6 +148,21 @@ export default function Home() {
             </li>
           </ol>
         </section>
+
+        {/* Inquiry / Contact Section */}
+        <section
+          className="mt-10 w-full max-w-2xl rounded-2xl border p-8 text-center flex flex-col items-center relative overflow-hidden"
+          style={{ borderColor: "#FFC30040", backgroundColor: "#06D6A00A" }}
+        >
+          <div className="text-3xl mb-2">💬</div>
+          <h3 className="text-lg sm:text-xl font-bold mb-2" style={{ color: "#FFC300" }}>
+            궁금한 점이나 의견이 있으신가요?
+          </h3>
+          <p className="text-xs sm:text-sm max-w-md mb-6 leading-relaxed" style={{ color: "#06D6A0CC" }}>
+            프로젝트 제안, 협업 문의, 또는 남기고 싶으신 피드백이 있다면 언제든 편하게 문의를 남겨주세요!
+          </p>
+          <InquiryTriggerButton variant="cta" label="문의사항 남기기" />
+        </section>
       </main>
 
       {/* Footer */}
@@ -152,6 +172,9 @@ export default function Home() {
       >
         <p>Built with Next.js • React • Tailwind CSS</p>
       </footer>
+
+      {/* Floating Button & Inquiry Modal Dialog */}
+      <InquiryModal />
     </div>
   );
 }
