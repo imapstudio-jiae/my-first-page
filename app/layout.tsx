@@ -13,8 +13,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My First Next.js App",
-  description: "TypeScript, App Router, Tailwind CSS로 구성된 심플하고 모던한 Next.js 프로젝트입니다.",
+  metadataBase: new URL("https://www.jistage.kr"),
+  title: "ji-stage",
+  description: "ji-stage에 오신걸 환경합니다",
+  openGraph: {
+    title: "ji-stage",
+    description: "ji-stage에 오신걸 환경합니다",
+    url: "https://www.jistage.kr",
+    siteName: "ji-stage",
+    images: [
+      {
+        url: "/moon.jpg",
+        width: 576,
+        height: 1024,
+        alt: "ji-stage",
+      },
+    ],
+    locale: "ko_KR",
+    type: "website",
+  },
   verification: {
     google: "nIqCaczgFR304wUcQuFRkQ_mXEz7woYvoajg5NLjWLk",
     other: {
