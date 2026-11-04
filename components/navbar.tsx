@@ -46,14 +46,14 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* 중앙: ji-stage 아래 IMAP Studio + 페이지 소개 */}
+          {/* 중앙: ji-stage + 페이지 소개 */}
           <div className="flex flex-col items-center justify-center text-center px-2">
             <a href="#" className="group flex flex-col items-center">
               <span className="font-serif-luxury font-bold text-2xl sm:text-3xl tracking-[0.03em] text-[#1A2825] leading-none group-hover:text-[#4A7C72] transition-colors">
                 ji-stage
               </span>
               <span className="font-serif-luxury text-[11px] sm:text-xs tracking-[0.22em] uppercase text-[#4A7C72] font-semibold mt-1">
-                IMAP Studio
+                Culture &amp; Movement
               </span>
             </a>
             {/* 페이지 소개 문구 */}
@@ -62,7 +62,7 @@ export default function Navbar() {
             </p>
           </div>
 
-          {/* 우측: SNS 링크 & 상담 예약 버튼 */}
+          {/* 우측: SNS 링크 & 모임 신청 버튼 */}
           <div className="flex items-center gap-3">
             <div className="hidden sm:flex items-center">
               <SocialLinks variant="header" />
@@ -70,13 +70,13 @@ export default function Navbar() {
 
             <div className="hidden sm:block h-3.5 w-px bg-[#A8B6C4]" />
 
-            {/* 상담 예약 버튼 */}
+            {/* 모임 신청 버튼 */}
             <button
-              onClick={() => openInquiryModal("기타 레슨 / 스튜디오 문의")}
+              onClick={() => openInquiryModal("독서 앙상블 / 문화 프로그램 참여")}
               className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#4A7C72] hover:bg-[#3C665D] text-white transition-all duration-200 shadow-2xs active:scale-95 cursor-pointer"
             >
               <span className="text-[#D99B95]">✦</span>
-              <span>상담 예약</span>
+              <span>모임 신청</span>
             </button>
 
             {/* 모바일 햄버거 버튼 */}
