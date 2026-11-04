@@ -14,11 +14,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.jistage.kr"),
-  title: "ji-stage",
-  description: "ji-stage에 오신걸 환경합니다",
+  title: "ji-stage | IMAP 스튜디오 & 문화 아지트",
+  description: "기타 레슨 및 공연 기획, 발레와 댄스의 몸 기록, 책과 음악이 흐르는 문화 프로그램을 만들어가는 공간 ji-stage입니다.",
   openGraph: {
-    title: "ji-stage",
-    description: "ji-stage에 오신걸 환경합니다",
+    title: "ji-stage | IMAP 스튜디오 & 문화 아지트",
+    description: "기타 레슨 및 공연 기획, 발레와 댄스의 몸 기록, 책과 음악이 흐르는 문화 프로그램을 만들어가는 공간 ji-stage입니다.",
     url: "https://www.jistage.kr",
     siteName: "ji-stage",
     images: [
@@ -50,7 +50,9 @@ export default function RootLayout({
       lang="ko"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans" style={{ backgroundColor: "#003566", color: "#06D6A0" }}>{children}</body>
+      <body className="min-h-full flex flex-col font-sans bg-[#C1CDD9] text-[#233330] selection:bg-[#D1E3DC] selection:text-[#1A2825]">
+        {children}
+      </body>
     </html>
   );
 }

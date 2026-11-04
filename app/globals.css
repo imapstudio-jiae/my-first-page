@@ -1,26 +1,159 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-main: #C1CDD9;
+  --bg-card: rgba(255, 255, 255, 0.95);
+  --bg-paper: #FFFFFF;
+
+  /* Primary: Muted Sage Mint */
+  --primary: #4A7C72;
+  --primary-hover: #3C665D;
+  --primary-light: #EDF5F2;
+  --primary-border: #D1E3DC;
+  --primary-glow: rgba(74, 124, 114, 0.2);
+
+  /* Secondary: Soft Dusty Pink / Blush */
+  --pink-accent: #D99B95;
+  --pink-hover: #C58882;
+  --pink-light: #FAF1F0;
+  --pink-border: #F0D4D1;
+  --pink-glow: rgba(217, 155, 149, 0.22);
+
+  /* Warm Butter / Yellow */
+  --butter-accent: #D97706;
+  --butter-light: #FEF9E7;
+  --butter-border: #FBE6A2;
+
+  /* Neutral & Text */
+  --text-main: #233330;
+  --text-muted: #5E736E;
+  --text-subtle: #8FA39E;
+
+  --border-color: #E2ECE7;
+  --border-active: #4A7C72;
+
+  --font-serif: 'Cormorant Garamond', 'Gowun Batang', Georgia, serif;
+  --font-sans: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100%;
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  letter-spacing: -0.015em;
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Font utility classes */
+.font-serif-luxury {
+  font-family: var(--font-serif);
+}
+
+.font-sans-clean {
+  font-family: var(--font-sans);
+}
+
+/* Atmospheric Ambient Background */
+.app-background {
+  display: none;
+}
+
+.pastel-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.55;
+  animation: floatOrb 18s ease-in-out infinite alternate;
+}
+
+.glow-mint {
+  width: 540px;
+  height: 540px;
+  background: radial-gradient(circle, #D8ECE5 0%, #C4E2D8 100%);
+  top: -120px;
+  left: -100px;
+}
+
+.glow-pink {
+  width: 540px;
+  height: 540px;
+  background: radial-gradient(circle, #FDEBE8 0%, #F8DAD6 100%);
+  bottom: -130px;
+  right: -90px;
+  animation-duration: 22s;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes floatOrb {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(30px, 20px) scale(1.06);
+  }
+}
+
+/* Elegant Brand Divider with Diamond */
+.brand-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 6px auto;
+  max-width: 220px;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #CBDCD6, transparent);
+}
+
+.divider-gem {
+  color: var(--pink-accent);
+  font-size: 0.72rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scaleUp {
+  animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }

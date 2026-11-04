@@ -26,14 +26,33 @@ export async function POST(request: Request) {
     }
 
     const resend = new Resend(apiKey);
-    const toEmail = process.env.CONTACT_EMAIL_TO || "delivered@resend.dev";
+    const toEmail = process.env.CONTACT_EMAIL_TO;
+    if (!toEmail || toEmail === "your-email@example.com") {
+      return NextResponse.json(
+        {
+          error:
+            "수신자 이메일(CONTACT_EMAIL_TO)이 설정되지 않았습니다. .env.local을 확인해주세요.",
+        },
+        { status: 500 }
+      );
+    }
     const fromEmail = process.env.CONTACT_EMAIL_FROM || "onboarding@resend.dev";
+
+    // Gmail 등에서 이전 메일과 대화형(스레드)으로 묶이지 않도록 현재 시각을 제목에 포함
+    const now = new Date();
+    const timeString = now.toLocaleTimeString("ko-KR", {
+      timeZone: "Asia/Seoul",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+    });
 
     const { data, error } = await resend.emails.send({
       from: fromEmail,
       to: [toEmail],
       replyTo: contact.includes("@") ? contact : undefined,
-      subject: `[웹페이지 문의] ${name}님의 ${category || "문의사항"}`,
+      subject: `[문의] ${name}님의 ${category || "문의사항"} (${timeString})`,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 12px; background-color: #ffffff;">
           <h2 style="color: #003566; margin-top: 0; border-bottom: 2px solid #06D6A0; padding-bottom: 12px;">

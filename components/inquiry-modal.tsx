@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from "react";
 
-export function openInquiryModal() {
+export function openInquiryModal(category?: string) {
   if (typeof window !== "undefined") {
-    window.dispatchEvent(new CustomEvent("open-inquiry-modal"));
+    window.dispatchEvent(
+      new CustomEvent("open-inquiry-modal", { detail: { category } })
+    );
   }
 }
 
@@ -13,16 +15,22 @@ export default function InquiryModal() {
   const [formData, setFormData] = useState({
     name: "",
     contact: "",
-    category: "일반 문의",
+    category: "기타 레슨 / 스튜디오 문의",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  // 전역 이벤트 리스너 (페이지 내 다른 버튼에서도 모달 호출 가능)
   useEffect(() => {
-    const handleOpen = () => {
+    const handleOpen = (e: Event) => {
+      const customEvent = e as CustomEvent<{ category?: string }>;
+      if (customEvent.detail?.category) {
+        setFormData((prev) => ({
+          ...prev,
+          category: customEvent.detail.category!,
+        }));
+      }
       setErrorMessage("");
       setIsOpen(true);
     };
@@ -30,7 +38,6 @@ export default function InquiryModal() {
     return () => window.removeEventListener("open-inquiry-modal", handleOpen);
   }, []);
 
-  // ESC 키로 닫기
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -53,7 +60,11 @@ export default function InquiryModal() {
     e.preventDefault();
     setErrorMessage("");
 
-    if (!formData.name.trim() || !formData.contact.trim() || !formData.message.trim()) {
+    if (
+      !formData.name.trim() ||
+      !formData.contact.trim() ||
+      !formData.message.trim()
+    ) {
       setErrorMessage("모든 필수 항목을 입력해주세요.");
       return;
     }
@@ -76,7 +87,8 @@ export default function InquiryModal() {
 
       setIsSubmitted(true);
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : "전송 중 오류가 발생했습니다.";
+      const msg =
+        err instanceof Error ? err.message : "전송 중 오류가 발생했습니다.";
       setErrorMessage(msg);
     } finally {
       setIsSubmitting(false);
@@ -87,7 +99,7 @@ export default function InquiryModal() {
     setFormData({
       name: "",
       contact: "",
-      category: "일반 문의",
+      category: "기타 레슨 / 스튜디오 문의",
       message: "",
     });
     setErrorMessage("");
@@ -97,64 +109,51 @@ export default function InquiryModal() {
 
   return (
     <>
-      {/* 우측 하단 플로팅 문의하기 버튼 */}
+      {/* 우측 하단 플로팅 문의하기 버튼 (뮤티드 민트 & 더스티 핑크 글로우) */}
       <button
-        onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-40 group flex items-center gap-2.5 px-5 py-3.5 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer border"
-        style={{
-          backgroundColor: "#FFC300",
-          color: "#003566",
-          borderColor: "#FFC30080",
-          boxShadow: "0 10px 25px -5px rgba(255, 195, 0, 0.4)",
-        }}
+        onClick={() => openInquiryModal("기타 레슨 / 스튜디오 문의")}
+        className="fixed bottom-6 right-6 z-40 group flex items-center gap-2.5 px-5 py-3 rounded-full shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer border border-[#D1E3DC] bg-white text-[#233330]"
         id="floating-inquiry-btn"
         aria-label="문의사항 남기기"
       >
-        <span className="text-xl group-hover:rotate-12 transition-transform duration-200">💬</span>
-        <span className="font-bold text-sm tracking-tight">문의사항 남기기</span>
+        <span className="w-6 h-6 rounded-full bg-[#EDF5F2] text-[#4A7C72] flex items-center justify-center text-xs group-hover:rotate-12 transition-transform font-bold">
+          ✦
+        </span>
+        <span className="font-semibold text-xs tracking-tight">상담 및 신청</span>
         <span className="relative flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-600 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-700"></span>
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D99B95] opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D99B95]"></span>
         </span>
       </button>
 
       {/* 문의 팝업 모달 */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-md animate-fadeIn"
-          style={{ backgroundColor: "rgba(0, 20, 45, 0.75)" }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-sm animate-fadeIn"
+          style={{ backgroundColor: "rgba(26, 40, 37, 0.45)" }}
           onClick={(e) => {
             if (e.target === e.currentTarget) setIsOpen(false);
           }}
         >
-          <div
-            className="w-full max-w-lg rounded-2xl border shadow-2xl overflow-hidden animate-scaleUp"
-            style={{
-              backgroundColor: "#00244A",
-              borderColor: "#06D6A040",
-              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.6)",
-            }}
-          >
+          <div className="w-full max-w-lg rounded-3xl border border-[#E2ECE7] bg-[#F7FAF8] shadow-2xl overflow-hidden animate-scaleUp">
             {/* Modal Header */}
-            <div
-              className="flex items-center justify-between px-6 py-4 border-b"
-              style={{ borderColor: "#06D6A020", backgroundColor: "#001E3C" }}
-            >
-              <div className="flex items-center gap-2.5">
-                <span className="text-xl">📬</span>
+            <div className="px-6 py-5 border-b border-[#E2ECE7] bg-white flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-2xl bg-[#EDF5F2] text-[#4A7C72] flex items-center justify-center text-lg">
+                  ✦
+                </div>
                 <div>
-                  <h3 className="text-base font-bold" style={{ color: "#FFC300" }}>
-                    문의사항 남기기
+                  <span className="text-[10px] tracking-[0.18em] uppercase text-[#4A7C72] font-semibold font-serif-luxury">
+                    Reservation & Inquiry
+                  </span>
+                  <h3 className="text-base font-bold text-[#1A2825] font-serif-luxury">
+                    상담 및 참여 신청
                   </h3>
-                  <p className="text-xs" style={{ color: "#06D6A0AA" }}>
-                    궁금한 점이나 전하고 싶은 메시지를 남겨주세요.
-                  </p>
                 </div>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="w-8 h-8 rounded-lg flex items-center justify-center text-lg transition-colors cursor-pointer"
-                style={{ color: "#06D6A080", backgroundColor: "#06D6A010" }}
+                className="w-8 h-8 rounded-full flex items-center justify-center text-sm text-[#8FA39E] hover:text-[#233330] hover:bg-stone-100 transition-colors cursor-pointer"
                 aria-label="닫기"
               >
                 ✕
@@ -165,25 +164,21 @@ export default function InquiryModal() {
             <div className="p-6">
               {isSubmitted ? (
                 <div className="text-center py-8 space-y-4">
-                  <div
-                    className="w-16 h-16 rounded-full mx-auto flex items-center justify-center text-3xl shadow-lg animate-bounce"
-                    style={{ backgroundColor: "#06D6A020", color: "#06D6A0", border: "2px solid #06D6A0" }}
-                  >
+                  <div className="w-16 h-16 rounded-full mx-auto flex items-center justify-center text-2xl shadow-sm bg-[#EDF5F2] text-[#4A7C72] border border-[#D1E3DC] animate-bounce">
                     ✓
                   </div>
-                  <h4 className="text-lg font-bold" style={{ color: "#FFC300" }}>
-                    문의가 성공적으로 접수되었습니다!
+                  <h4 className="text-lg font-bold text-[#1A2825] font-serif-luxury">
+                    신청이 성공적으로 접수되었습니다
                   </h4>
-                  <p className="text-sm leading-relaxed" style={{ color: "#06D6A0BB" }}>
-                    작성해주신 소중한 내용은 꼼꼼히 확인 후<br />
-                    기재해주신 연락처/이메일로 빠르게 회신드리겠습니다.
+                  <p className="text-xs sm:text-sm text-[#5E736E] leading-relaxed">
+                    남겨주신 메시지를 꼼꼼히 확인한 후,<br />
+                    기재해주신 연락처나 이메일로 다정하게 안내드리겠습니다.
                   </p>
 
-                  <div className="pt-4 flex justify-center gap-3">
+                  <div className="pt-4 flex justify-center">
                     <button
                       onClick={handleReset}
-                      className="px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 cursor-pointer shadow-md"
-                      style={{ backgroundColor: "#FFC300", color: "#003566" }}
+                      className="px-6 py-2.5 rounded-full font-semibold text-xs bg-[#4A7C72] hover:bg-[#3C665D] text-white transition-all cursor-pointer shadow-xs"
                     >
                       확인 완료
                     </button>
@@ -192,135 +187,129 @@ export default function InquiryModal() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   {errorMessage && (
-                    <div
-                      className="p-3 rounded-xl text-xs flex items-start gap-2 border leading-relaxed"
-                      style={{
-                        backgroundColor: "#FF005515",
-                        borderColor: "#FF005540",
-                        color: "#FF8099",
-                      }}
-                    >
-                      <span className="text-sm">⚠️</span>
-                      <div className="flex-1 font-medium">{errorMessage}</div>
+                    <div className="p-3 rounded-2xl text-xs flex items-start gap-2 border bg-[#FAF1F0] border-[#F0D4D1] text-[#C58882] leading-relaxed">
+                      <span>⚠️</span>
+                      <span>{errorMessage}</span>
                     </div>
                   )}
 
-                  {/* 이름 입력 */}
+                  {/* 카테고리 선택 */}
                   <div>
-                    <label className="block text-xs font-semibold mb-1.5" style={{ color: "#06D6A0" }}>
-                      성함 / 닉네임 <span style={{ color: "#FFC300" }}>*</span>
+                    <label className="block text-xs font-semibold text-[#5E736E] mb-1.5">
+                      상담 및 신청 유형 <span className="text-[#D99B95]">*</span>
                     </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="예: 홍길동"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl text-sm border focus:outline-none transition"
-                      style={{
-                        backgroundColor: "#001E3C",
-                        borderColor: "#06D6A030",
-                        color: "#FFFFFF",
-                      }}
-                    />
-                  </div>
-
-                  {/* 연락처 / 이메일 입력 */}
-                  <div>
-                    <label className="block text-xs font-semibold mb-1.5" style={{ color: "#06D6A0" }}>
-                      답변받으실 연락처 / 이메일 <span style={{ color: "#FFC300" }}>*</span>
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="예: email@example.com 또는 010-0000-0000"
-                      value={formData.contact}
-                      onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl text-sm border focus:outline-none transition"
-                      style={{
-                        backgroundColor: "#001E3C",
-                        borderColor: "#06D6A030",
-                        color: "#FFFFFF",
-                      }}
-                    />
-                  </div>
-
-                  {/* 문의 유형 선택 */}
-                  <div>
-                    <label className="block text-xs font-semibold mb-1.5" style={{ color: "#06D6A0" }}>
-                      문의 유형
-                    </label>
-                    <div className="grid grid-cols-3 gap-2">
-                      {["일반 문의", "프로젝트 협업", "기타 의견"].map((type) => (
+                    <div className="grid grid-cols-2 gap-2">
+                      {[
+                        {
+                          val: "기타 레슨 / 스튜디오 문의",
+                          icon: "🎸",
+                          label: "기타 레슨·스튜디오",
+                        },
+                        {
+                          val: "독서 앙상블 / 문화 프로그램 참여",
+                          icon: "📖",
+                          label: "독서 앙상블·살롱",
+                        },
+                        {
+                          val: "프로젝트 협업 및 대관 문의",
+                          icon: "🎪",
+                          label: "공간 협업·대관",
+                        },
+                        {
+                          val: "일반 문의 및 응원 메시지",
+                          icon: "☕",
+                          label: "일반 문의·응원",
+                        },
+                      ].map((cat) => (
                         <button
-                          key={type}
+                          key={cat.val}
                           type="button"
-                          onClick={() => setFormData({ ...formData, category: type })}
-                          className={`py-2 px-3 text-xs font-medium rounded-lg border transition cursor-pointer ${
-                            formData.category === type ? "font-bold shadow-sm" : ""
+                          onClick={() =>
+                            setFormData((prev) => ({
+                              ...prev,
+                              category: cat.val,
+                            }))
+                          }
+                          className={`p-2.5 rounded-xl border text-xs font-medium text-left flex items-center gap-2 transition-all cursor-pointer ${
+                            formData.category === cat.val
+                              ? "bg-white border-[#4A7C72] text-[#4A7C72] ring-1 ring-[#4A7C72] shadow-2xs font-semibold"
+                              : "bg-white/70 border-[#E2ECE7] text-[#5E736E] hover:bg-white"
                           }`}
-                          style={{
-                            backgroundColor: formData.category === type ? "#06D6A025" : "#001E3C",
-                            borderColor: formData.category === type ? "#06D6A0" : "#06D6A020",
-                            color: formData.category === type ? "#FFC300" : "#06D6A080",
-                          }}
                         >
-                          {type}
+                          <span>{cat.icon}</span>
+                          <span className="truncate">{cat.label}</span>
                         </button>
                       ))}
                     </div>
                   </div>
 
-                  {/* 문의 내용 입력 */}
+                  {/* 성함 */}
                   <div>
-                    <label className="block text-xs font-semibold mb-1.5" style={{ color: "#06D6A0" }}>
-                      문의 내용 <span style={{ color: "#FFC300" }}>*</span>
+                    <label className="block text-xs font-semibold text-[#5E736E] mb-1">
+                      성함 / 닉네임 <span className="text-[#D99B95]">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
+                      placeholder="예: 김지수"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-[#E2ECE7] bg-white text-xs text-[#233330] focus:outline-none focus:ring-2 focus:ring-[#4A7C72]/30 focus:border-[#4A7C72] placeholder:text-[#8FA39E]"
+                    />
+                  </div>
+
+                  {/* 연락처 */}
+                  <div>
+                    <label className="block text-xs font-semibold text-[#5E736E] mb-1">
+                      연락처 또는 이메일{" "}
+                      <span className="text-[#D99B95]">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.contact}
+                      onChange={(e) =>
+                        setFormData({ ...formData, contact: e.target.value })
+                      }
+                      placeholder="예: 010-1234-5678 또는 name@example.com"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-[#E2ECE7] bg-white text-xs text-[#233330] focus:outline-none focus:ring-2 focus:ring-[#4A7C72]/30 focus:border-[#4A7C72] placeholder:text-[#8FA39E]"
+                    />
+                  </div>
+
+                  {/* 메시지 */}
+                  <div>
+                    <label className="block text-xs font-semibold text-[#5E736E] mb-1">
+                      남기실 메시지 <span className="text-[#D99B95]">*</span>
                     </label>
                     <textarea
                       required
                       rows={4}
-                      placeholder="남기실 내용을 자세히 적어주세요."
                       value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl text-sm border focus:outline-none transition resize-none"
-                      style={{
-                        backgroundColor: "#001E3C",
-                        borderColor: "#06D6A030",
-                        color: "#FFFFFF",
-                      }}
+                      onChange={(e) =>
+                        setFormData({ ...formData, message: e.target.value })
+                      }
+                      placeholder="기타 경험 여부, 원하시는 레슨 형태(1:1/그룹), 또는 참여하고 싶은 문화 프로그램 일정을 적어주세요 :)"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-[#E2ECE7] bg-white text-xs text-[#233330] focus:outline-none focus:ring-2 focus:ring-[#4A7C72]/30 focus:border-[#4A7C72] placeholder:text-[#8FA39E] resize-none leading-relaxed"
                     />
                   </div>
 
-                  {/* 안내 문구 & 버튼 */}
-                  <div className="pt-2 flex items-center justify-end gap-3">
+                  {/* 버튼 */}
+                  <div className="pt-2 flex items-center justify-end gap-2.5">
                     <button
                       type="button"
                       onClick={() => setIsOpen(false)}
-                      className="px-4 py-2.5 rounded-xl text-xs font-medium transition cursor-pointer"
-                      style={{ color: "#06D6A080", backgroundColor: "#06D6A010" }}
+                      className="px-4 py-2.5 rounded-xl text-xs font-medium text-[#8FA39E] hover:bg-stone-100 transition-colors cursor-pointer"
                     >
                       취소
                     </button>
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="px-6 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 shadow-lg transition active:scale-95 cursor-pointer disabled:opacity-50"
-                      style={{
-                        backgroundColor: "#06D6A0",
-                        color: "#003566",
-                      }}
+                      className="px-6 py-2.5 rounded-xl font-bold text-xs bg-[#4A7C72] hover:bg-[#3C665D] text-white transition-all cursor-pointer shadow-xs disabled:opacity-50"
                     >
-                      {isSubmitting ? (
-                        <>
-                          <span className="inline-block animate-spin">⏳</span>
-                          <span>전송 중...</span>
-                        </>
-                      ) : (
-                        <>
-                          <span>보내기</span>
-                          <span>🚀</span>
-                        </>
-                      )}
+                      {isSubmitting ? "전송 중..." : "신청 보내기 →"}
                     </button>
                   </div>
                 </form>
