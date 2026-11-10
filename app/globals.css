@@ -4,33 +4,33 @@
 
 :root {
   /* ======================================================== */
-  /* [JI.Stage 디자인 시스템 - 단 한 곳에서 관리하는 색상 변수] */
+  /* [JI.Stage 디자인 시스템 - Coolors 이미지 팔레트 기반]    */
   /* 아래 색상 코드 한 줄만 바꾸면 사이트 전체가 일괄 변경됩니다. */
   /* ======================================================== */
 
-  /* [1. 배경 & 표면 색상: 따뜻한 리넨 베이지 & 순백 카드] */
-  --bg-main: #F7F5F0;             /* 메인 페이지 배경 (따뜻한 리넨 크림) */
-  --bg-subtle: #EFECE6;           /* 보조/구분 배경 */
-  --bg-surface: #FFFFFF;          /* 카드, 모달, 컨테이너 배경 */
-  --border-subtle: #E5E0D8;       /* 기본 테두리 및 구분선 */
-  --border-strong: #D4CDC2;       /* 진한 테두리 및 구분선 */
+  /* [1. 배경 & 표면 색상: Pale Sky(#CCE6F4) 기반의 맑고 부드러운 톤] */
+  --bg-main: #F5FAFD;             /* 메인 배경: 은은하고 맑은 페일 스카이 틴트 */
+  --bg-subtle: #E8F3F8;           /* 보조/구분 배경 */
+  --bg-surface: #FFFFFF;          /* 카드, 모달, 컨테이너 배경 (순백) */
+  --border-subtle: #D8E8F2;       /* 기본 테두리 및 구분선 */
+  --border-strong: #CCE6F4;       /* 팔레트의 Pale Sky(#CCE6F4) */
 
-  /* [2. 주 색 (Primary: 믿음직하고 깊은 포레스트 세이지)] */
-  --primary: #2A473E;             /* 주 색상 (버튼, 주요 아이콘, 강조 타이틀) */
-  --primary-hover: #1F352E;       /* 주 색상 호버 */
-  --primary-light: #EAF1EE;       /* 주 색상 연한 칩/뱃지 배경 */
-  --primary-border: #C9DBD3;      /* 주 색상 연한 테두리 */
+  /* [2. 주 색 (Primary: Baltic Blue #175676 - 깊고 믿음직한 인텔리전트 블루)] */
+  --primary: #175676;             /* 팔레트의 Baltic Blue */
+  --primary-hover: #11425C;       /* 주 색상 호버 */
+  --primary-light: #EBF4F9;       /* 주 색상 연한 칩/뱃지 배경 */
+  --primary-border: #CCE6F4;      /* 주 색상 연한 테두리 */
 
-  /* [3. 강조 색 (Accent: 따뜻하고 세련된 웜 테라코타)] */
-  --accent: #C86853;              /* 강조 색상 (시그니처 점, ✦ 보석, 주요 포인트) */
-  --accent-hover: #B05541;        /* 강조 색상 호버 */
-  --accent-light: #FBF1EE;        /* 강조 색상 연한 칩/뱃지 배경 */
-  --accent-border: #F2D5CD;       /* 강조 색상 연한 테두리 */
+  /* [3. 강조 색 (Accent: Rosewood #BA324F / Crimson #D62839 - 세련된 장미빛)] */
+  --accent: #BA324F;              /* 팔레트의 Rosewood */
+  --accent-hover: #D62839;        /* 팔레트의 Classic Crimson */
+  --accent-light: #FDF1F3;        /* 강조 색상 연한 칩/뱃지 배경 */
+  --accent-border: #F7D4DC;       /* 강조 색상 연한 테두리 */
 
-  /* [4. 글자 색상 (Text: 부드러운 차콜 & 차분한 슬레이트 모스)] */
-  --text-main: #1E2523;           /* 주요 텍스트 (제목 및 메인 본문) */
-  --text-muted: #5A6763;          /* 보조 텍스트 (서브 카피 및 설명) */
-  --text-subtle: #8A9692;         /* 캡션, 날짜, 메타 정보 */
+  /* [4. 글자 색상 (Text: Baltic Blue 기반의 짙은 네이비 차콜)] */
+  --text-main: #132633;           /* 주요 텍스트 (깊은 네이비 먹색) */
+  --text-muted: #486375;          /* 보조 텍스트 (차분한 슬레이트 블루) */
+  --text-subtle: #7A95A6;         /* 캡션, 날짜, 메타 정보 */
 
   /* [5. 글꼴 (Font Family: Pretendard + Cormorant Garamond)] */
   --font-serif: 'Cormorant Garamond', 'Gowun Batang', Georgia, serif;
