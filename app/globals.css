@@ -8,32 +8,34 @@
   /* 아래 색상 코드 한 줄만 바꾸면 사이트 전체가 일괄 변경됩니다. */
   /* ======================================================== */
 
-  /* [1. 배경 & 표면 색상: Pale Sky(#CCE6F4) 기반의 맑고 감각적인 스카이 톤] */
-  --bg-main: #F0F6FA;             /* 메인 배경: 팔레트의 Pale Sky가 은은하고 확실하게 감도는 톤 */
-  --bg-subtle: #E2EFF7;           /* 보조/구분 배경 */
+  /* [1. 배경 & 표면 색상: Pale Sky(#CCE6F4) 기반의 청량하고 정돈된 톤] */
+  --bg-main: #EAF2F7;             /* 메인 배경: 흐릿함 없이 확실하게 청량한 페일 스카이 톤 */
+  --bg-subtle: #D8E7F1;           /* 보조/구분 배경 */
   --bg-surface: #FFFFFF;          /* 카드, 모달, 컨테이너 배경 (선명한 순백) */
-  --border-subtle: #D2E4F0;       /* 기본 테두리 및 구분선 */
-  --border-strong: #CCE6F4;       /* 팔레트의 Pale Sky(#CCE6F4) */
+  --border-subtle: #B5D2E5;       /* 확실하고 정돈된 테두리 (흐릿함 제거) */
+  --border-strong: #7AAECB;       /* 선명한 포인트 테두리 & 구분선 */
 
   /* [2. 주 색 (Primary: Baltic Blue #175676 - 깊고 믿음직한 딥블루)] */
   --primary: #175676;             /* 팔레트의 Baltic Blue */
-  --primary-hover: #0F3D55;       /* 주 색상 호버 (더 깊은 네이비) */
-  --primary-light: #E3F1F8;       /* 주 색상 연한 칩/뱃지 배경 */
-  --primary-border: #BBDCEE;      /* 주 색상 테두리 */
+  --primary-hover: #0E3B52;       /* 주 색상 호버 (더 깊고 진한 네이비) */
+  --primary-dark: #0A2939;        /* 묵직하고 신뢰감 있는 딥 네이비 */
+  --primary-light: #DFEFF7;       /* 주 색상 연한 칩/뱃지 배경 */
+  --primary-border: #9FC6DD;      /* 주 색상 테두리 */
 
   /* [3. 강조 색 (Accent: Classic Crimson #D62839 & Rosewood #BA324F)] */
-  --accent: #D62839;              /* 팔레트의 Classic Crimson (선명하고 세련된 시그니처 레드) */
-  --accent-hover: #BA324F;        /* 팔레트의 Rosewood */
-  --accent-light: #FDEDF0;        /* 강조 색상 연한 칩/뱃지 배경 */
-  --accent-border: #F9CAD2;       /* 강조 색상 연한 테두리 */
+  --accent: #BA324F;              /* 팔레트의 Rosewood (깊고 진한 와인빛 레드) */
+  --accent-vibrant: #D62839;      /* 팔레트의 Classic Crimson (선명한 크림슨 레드) */
+  --accent-hover: #9E243E;        /* 강조 색상 호버 */
+  --accent-light: #FBE6EA;        /* 강조 색상 연한 칩/뱃지 배경 */
+  --accent-border: #F3B2BF;       /* 강조 색상 연한 테두리 */
 
   /* [4. 보조 액센트 (Turquoise Surf #4BA3C3)] */
   --secondary: #4BA3C3;           /* 팔레트의 Turquoise Surf (청량한 서브 포인트) */
 
-  /* [5. 글자 색상 (Text: Baltic Blue 기반의 짙은 네이비 차콜)] */
-  --text-main: #132633;           /* 주요 텍스트 (깊은 네이비 먹색) */
-  --text-muted: #486375;          /* 보조 텍스트 (차분한 슬레이트 블루) */
-  --text-subtle: #7A95A6;         /* 캡션, 날짜, 메타 정보 */
+  /* [5. 글자 색상 (Text: 흐릿하지 않고 또렷한 딥 네이비 잉크 톤)] */
+  --text-main: #0B1A24;           /* 주요 텍스트 (또렷하고 선명한 최고대비 딥 잉크) */
+  --text-muted: #243D4F;          /* 보조 텍스트 (흐릿함 없이 선명하게 읽히는 딥 슬레이트) */
+  --text-subtle: #4D6E82;         /* 캡션, 날짜, 메타 정보 */
 
   /* [5. 글꼴 (Font Family: Pretendard + Cormorant Garamond)] */
   --font-serif: 'Cormorant Garamond', 'Gowun Batang', Georgia, serif;

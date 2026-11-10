@@ -94,13 +94,13 @@ export default function Home() {
         {/* ========================================================= */}
         {/* 1. ABOUT : 일상의 재미를 만들고 나누는 공간 */}
         {/* ========================================================= */}
-        <section id="about" className="py-20 sm:py-28 border-t border-[var(--border-subtle)] bg-white">
+        <section id="about" className="py-20 sm:py-28 border-t border-[var(--border-subtle)] bg-[var(--bg-main)]">
           <div className="max-w-6xl mx-auto px-5 sm:px-8">
             {/* 헤더 */}
             <div className="max-w-2xl mx-auto text-center space-y-4 mb-16">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[var(--primary-light)] text-[var(--primary)] border border-[var(--primary-border)]">
-                <span className="text-[var(--accent)]">✦</span>
-                <span className="tracking-[0.16em] uppercase font-serif-luxury">About Jiae &amp; JI.Stage</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-white text-[var(--primary)] border border-[var(--border-subtle)] shadow-2xs">
+                <span className="text-[var(--accent)] font-bold">✦</span>
+                <span className="tracking-[0.16em] uppercase font-serif-luxury font-bold">About Jiae &amp; JI.Stage</span>
               </div>
               <h2 className="font-serif-luxury text-3xl sm:text-4xl font-bold text-[var(--text-main)] tracking-tight">
                 일상의 재미를 만들고 나누는 공간
@@ -112,42 +112,42 @@ export default function Home() {
               </p>
             </div>
 
-            {/* 3가지 정체성 카드 */}
+            {/* 3가지 정체성 카드 (선명한 화이트 카드 & 진한 텍스트 대비) */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-              <div className="p-8 rounded-3xl bg-[var(--bg-main)] border border-[var(--border-subtle)] space-y-4 hover:border-[var(--accent)]/60 hover:shadow-md transition-all">
-                <div className="w-12 h-12 rounded-2xl bg-white border border-[var(--accent-border)] flex items-center justify-center text-xl shadow-2xs">🎸</div>
+              <div className="p-8 rounded-3xl bg-white border border-[var(--border-subtle)] space-y-4 hover:border-[var(--accent)] hover:shadow-xl transition-all shadow-sm">
+                <div className="w-12 h-12 rounded-2xl bg-[var(--primary-light)] border border-[var(--primary-border)] flex items-center justify-center text-xl shadow-2xs">🎸</div>
                 <div className="space-y-1">
-                  <span className="text-xs font-bold text-[var(--accent)] tracking-[0.12em] uppercase font-serif-luxury">Music &amp; Acoustic · 음악</span>
+                  <span className="text-xs font-extrabold text-[var(--accent)] tracking-[0.14em] uppercase font-serif-luxury">Music &amp; Acoustic · 음악</span>
                   <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">기타 연주 &amp; 공연 기획</h3>
                 </div>
                 <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
                   클래식, 어쿠스틱, 핑거스타일 기타를 함께 나누고 가르칩니다. 혼자 연습하는 즐거움을 넘어 무대 위에서 소리를 모으는 정기 공연을 기획합니다.
                 </p>
-                <div className="pt-2 text-xs font-semibold text-[var(--accent)]">#어쿠스틱 #앙상블합주 #하우스콘서트</div>
+                <div className="pt-2 text-xs font-bold text-[var(--accent)]">#어쿠스틱 #앙상블합주 #하우스콘서트</div>
               </div>
 
-              <div className="p-8 rounded-3xl bg-[var(--bg-main)] border border-[var(--border-subtle)] space-y-4 hover:border-[var(--accent)]/60 hover:shadow-md transition-all">
-                <div className="w-12 h-12 rounded-2xl bg-white border border-[var(--accent-border)] flex items-center justify-center text-xl shadow-2xs">🩰</div>
+              <div className="p-8 rounded-3xl bg-white border border-[var(--border-subtle)] space-y-4 hover:border-[var(--accent)] hover:shadow-xl transition-all shadow-sm">
+                <div className="w-12 h-12 rounded-2xl bg-[var(--accent-light)] border border-[var(--accent-border)] flex items-center justify-center text-xl shadow-2xs">🩰</div>
                 <div className="space-y-1">
-                  <span className="text-xs font-bold text-[var(--accent)] tracking-[0.12em] uppercase font-serif-luxury">Movement Record · 신체</span>
+                  <span className="text-xs font-extrabold text-[var(--accent)] tracking-[0.14em] uppercase font-serif-luxury">Movement Record · 신체</span>
                   <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">발레와 댄스, 몸의 기록</h3>
                 </div>
                 <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
                   발레 바 위에서 고요하게 호흡을 세우는 정적인 시간, 그리고 신나는 비트에 발을 맞추는 셔플댄스의 리듬. 음악을 온몸으로 느끼는 감각을 기록합니다.
                 </p>
-                <div className="pt-2 text-xs font-semibold text-[var(--accent)]">#성인발레 #셔플댄스 #몸의감각</div>
+                <div className="pt-2 text-xs font-bold text-[var(--accent)]">#성인발레 #셔플댄스 #몸의감각</div>
               </div>
 
-              <div className="p-8 rounded-3xl bg-[var(--bg-main)] border border-[var(--border-subtle)] space-y-4 hover:border-[var(--accent)]/60 hover:shadow-md transition-all">
-                <div className="w-12 h-12 rounded-2xl bg-white border border-[var(--accent-border)] flex items-center justify-center text-xl shadow-2xs">📖</div>
+              <div className="p-8 rounded-3xl bg-white border border-[var(--border-subtle)] space-y-4 hover:border-[var(--accent)] hover:shadow-xl transition-all shadow-sm">
+                <div className="w-12 h-12 rounded-2xl bg-[var(--primary-light)] border border-[var(--primary-border)] flex items-center justify-center text-xl shadow-2xs">📖</div>
                 <div className="space-y-1">
-                  <span className="text-xs font-bold text-[var(--accent)] tracking-[0.12em] uppercase font-serif-luxury">Culture Salon · 연결</span>
+                  <span className="text-xs font-extrabold text-[var(--accent)] tracking-[0.14em] uppercase font-serif-luxury">Culture Salon · 연결</span>
                   <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">책과 음악이 있는 문화 기획</h3>
                 </div>
                 <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
                   책 속 문장에 어쿠스틱 선율을 얹는 &apos;독서 앙상블&apos;부터, 움직임 워크숍과 소규모 살롱 콘서트까지. 공간과 사람이 다정하게 연결되는 프로그램을 만듭니다.
                 </p>
-                <div className="pt-2 text-xs font-semibold text-[var(--accent)]">#독서앙상블 #문화살롱 #공간협업</div>
+                <div className="pt-2 text-xs font-bold text-[var(--accent)]">#독서앙상블 #문화살롱 #공간협업</div>
               </div>
             </div>
 
@@ -177,23 +177,23 @@ export default function Home() {
                   { emoji: "🩰", label: "성인 발레 & 댄스", value: "[  ]년차" },
                   { emoji: "📚", label: "독서 앙상블 살롱", value: "정기 운영" },
                 ].map((stat) => (
-                  <div key={stat.label} className="p-6 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-subtle)] text-center space-y-2 hover:shadow-sm transition-all">
+                  <div key={stat.label} className="p-6 rounded-2xl bg-white border border-[var(--border-subtle)] text-center space-y-2 hover:border-[var(--accent)] hover:shadow-md transition-all shadow-2xs">
                     <span className="text-2xl">{stat.emoji}</span>
                     <p className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">{stat.value}</p>
-                    <p className="text-[11px] text-[var(--text-muted)] leading-snug">{stat.label}</p>
+                    <p className="text-[11px] text-[var(--text-muted)] font-medium leading-snug">{stat.label}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* 가치관 / 철학 */}
-            <div className="rounded-3xl bg-[var(--primary-light)] border border-[var(--primary-border)] p-8 sm:p-12 mb-16">
-              <div className="max-w-3xl mx-auto text-center space-y-6">
-                <span className="text-[var(--primary)] font-serif-luxury text-2xl">✦</span>
-                <h3 className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[var(--text-main)]">
+            {/* 가치관 / 철학 : 묵직하고 믿음직한 딥블루 솔리드 섹션 (약간 진한색 사용) */}
+            <div className="rounded-3xl bg-[var(--primary)] text-white border border-[var(--primary-dark)] p-8 sm:p-14 mb-16 shadow-xl relative overflow-hidden">
+              <div className="max-w-3xl mx-auto text-center space-y-6 relative z-10">
+                <span className="text-[var(--accent-vibrant)] font-serif-luxury text-3xl">✦</span>
+                <h3 className="font-serif-luxury text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-snug">
                   &ldquo;좋은 음악 한 소절과 따뜻한 문장이<br />누군가의 하루를 바꿀 수 있다고 믿습니다&rdquo;
                 </h3>
-                <p className="text-sm text-[var(--text-muted)] leading-loose max-w-xl mx-auto">
+                <p className="text-sm sm:text-base text-white/90 leading-loose max-w-xl mx-auto">
                   거창하지 않아도 됩니다. 오늘 처음 코드를 짚은 손끝, 발레 바에서 처음 느끼는 중심, 책 속 한 문장에 고개를 끄덕이는 순간— 그 소소한 감각들이 모여 삶을 풍요롭게 합니다.
                   JI.Stage가 그 순간들의 다정한 기록이 되길 바랍니다.
                 </p>
@@ -401,17 +401,21 @@ export default function Home() {
               </div>
             </div>
 
-            {/* CTA 배너 */}
-            <div className="text-center p-8 sm:p-10 rounded-3xl bg-white border border-[var(--border-subtle)] shadow-sm space-y-4">
-              <h3 className="font-serif-luxury text-lg sm:text-xl font-bold text-[var(--text-main)]">새로운 문화 모임과 협업에 참여하고 싶으신가요?</h3>
-              <p className="text-xs sm:text-sm text-[var(--text-muted)] max-w-lg mx-auto leading-relaxed">
+            {/* CTA 배너 : 짙은 딥블루 솔리드 + 선명한 크림슨 버튼 포인트 */}
+            <div className="text-center p-8 sm:p-12 rounded-3xl bg-[var(--primary)] text-white border border-[var(--primary-dark)] shadow-xl space-y-4">
+              <span className="text-[var(--accent-vibrant)] text-2xl font-serif-luxury">✦</span>
+              <h3 className="font-serif-luxury text-xl sm:text-2xl font-bold text-white">새로운 문화 모임과 협업에 참여하고 싶으신가요?</h3>
+              <p className="text-xs sm:text-sm text-white/90 max-w-lg mx-auto leading-relaxed">
                 독서 앙상블 참여 신청, 워크숍 일정 안내 요청, 혹은 함께 만들고 싶은 프로그램 아이디어가 있다면 언제든 자유롭게 메시지를 보내주세요.
               </p>
-              <InquiryTriggerButton
-                variant="cta"
-                category="독서 앙상블 / 문화 프로그램 참여"
-                label="문화 프로그램 참여 신청하기"
-              />
+              <div className="pt-2">
+                <InquiryTriggerButton
+                  variant="cta"
+                  category="독서 앙상블 / 문화 프로그램 참여"
+                  label="문화 프로그램 참여 신청하기"
+                  className="!bg-[var(--accent-vibrant)] hover:!bg-[var(--accent)] text-white shadow-lg"
+                />
+              </div>
             </div>
           </div>
         </section>
