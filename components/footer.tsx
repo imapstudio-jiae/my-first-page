@@ -16,17 +16,17 @@ export default function Footer() {
                 🎸
               </span>
               <span className="font-serif-luxury font-bold text-2xl text-[#1A2825]">
-                {SITE_CONFIG.name}
+                JI<span className="text-[#D99B95] font-black">.</span>Stage
               </span>
               <span className="text-xs px-2.5 py-0.5 rounded-full bg-[#EDF5F2] text-[#4A7C72] border border-[#D1E3DC] font-semibold">
-                IMAP Studio
+                Atelier
               </span>
             </div>
             <p className="text-xs sm:text-sm text-[#5E736E] leading-relaxed max-w-sm">
-              기타 레슨과 공연 기획, 발레·댄스의 몸 기록, 그리고 책과 음악이 흐르는 문화 프로그램을 엮어가는 다정한 개인 공간입니다.
+              음악을 배우고, 몸을 움직이고, 생각을 나누는 다정한 문화 공간입니다.
             </p>
             <div className="text-xs text-[#8FA39E] space-y-1">
-              <p>📍 위치: 서울시 (IMAP Studio)</p>
+              <p>📍 위치: 서울시 (JI.Stage 아틀리에)</p>
               <p>✉️ 이메일: {SITE_CONFIG.email}</p>
             </div>
           </div>

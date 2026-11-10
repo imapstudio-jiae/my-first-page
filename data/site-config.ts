@@ -16,11 +16,11 @@ export interface NavItem {
 }
 
 export const SITE_CONFIG = {
-  name: "ji-stage",
-  brandTitle: "ji-stage",
-  tagline: "음악과 몸의 리듬, 책과 일상이 머무는 아늑한 아지트",
+  name: "JI.Stage",
+  brandTitle: "JI.Stage",
+  tagline: "음악과 움직임을 통해 일상에 새로운 감각을 더합니다",
   description:
-    "발레와 댄스의 몸 기록, 책과 음악이 흐르는 문화 프로그램을 엮어가는 지애(Jiae)의 공간입니다.",
+    "음악을 배우고, 몸을 움직이고, 생각을 나누는 문화 공간 지애(Jiae)의 JI.Stage입니다.",
   email: "jeje423914@gmail.com",
   phone: "010-0000-0000",
   location: "서울시",

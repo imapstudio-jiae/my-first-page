@@ -14,13 +14,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.jistage.kr"),
-  title: "ji-stage | IMAP 스튜디오 & 문화 아지트",
-  description: "기타 레슨 및 공연 기획, 발레와 댄스의 몸 기록, 책과 음악이 흐르는 문화 프로그램을 만들어가는 공간 ji-stage입니다.",
+  title: "JI.Stage | 음악을 배우고, 몸을 움직이고, 생각을 나누는 공간",
+  description: "음악과 움직임을 통해 일상에 새로운 감각을 더합니다. JI.Stage 문화 & 무브먼트 아틀리에",
   openGraph: {
-    title: "ji-stage | IMAP 스튜디오 & 문화 아지트",
-    description: "기타 레슨 및 공연 기획, 발레와 댄스의 몸 기록, 책과 음악이 흐르는 문화 프로그램을 만들어가는 공간 ji-stage입니다.",
+    title: "JI.Stage | 음악을 배우고, 몸을 움직이고, 생각을 나누는 공간",
+    description: "음악과 움직임을 통해 일상에 새로운 감각을 더합니다. JI.Stage 문화 & 무브먼트 아틀리에",
     url: "https://www.jistage.kr",
-    siteName: "ji-stage",
+    siteName: "JI.Stage",
     images: [
       {
         url: "/moon.jpg",

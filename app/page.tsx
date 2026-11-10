@@ -18,64 +18,80 @@ export default function Home() {
 
       <main className="flex-1 relative z-10">
         {/* ========================================================= */}
-        {/* HERO SECTION : ji-stage 아틀리에 헤더 */}
+        {/* HERO SECTION : JI.Stage 첫 화면 개선 */}
         {/* ========================================================= */}
-        <section className="pt-10 pb-16 sm:pt-14 sm:pb-24">
-          <div className="max-w-4xl mx-auto px-5 sm:px-8 text-center space-y-6">
-            <div className="space-y-1.5">
-              <span className="inline-block font-serif-luxury text-xs sm:text-sm tracking-[0.22em] uppercase text-[#4A7C72] font-semibold">
-                Culture &amp; Movement Atelier
+        <section className="pt-6 pb-12 sm:pt-10 sm:pb-16">
+          <div className="max-w-4xl mx-auto px-5 sm:px-8 text-center space-y-3.5">
+            {/* 상단 서브 라벨 (시그니처 포인트 로고 스타일) */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-white/70 backdrop-blur-xs text-[#4A7C72] border border-[#A8B6C4]/60 shadow-2xs">
+              <span className="font-serif-luxury font-bold tracking-tight text-[#1A2825]">
+                JI<span className="text-[#D99B95] font-black">.</span>Stage
               </span>
-              <h1 className="font-serif-luxury text-4xl sm:text-6xl font-bold tracking-[0.02em] text-[#1A2825] leading-none">
-                ji-stage
-              </h1>
-              <div className="brand-divider">
-                <span className="divider-line" />
-                <span className="divider-gem">✦</span>
-                <span className="divider-line" />
-              </div>
-              <p className="text-sm sm:text-base text-[#5E736E] font-normal">
-                음악과 몸의 리듬, 책과 일상이 머무는 아늑한 아지트
-              </p>
+              <span className="text-[#A8B6C4]">·</span>
+              <span className="tracking-[0.18em] uppercase font-serif-luxury text-[11px] text-[#4A7C72]">
+                Culture &amp; Movement
+              </span>
             </div>
 
-            <div className="relative rounded-3xl overflow-hidden border border-[#E2ECE7] shadow-lg max-h-72 sm:max-h-84 bg-[#EDF3F0] group">
+            {/* 메인 카피: 명확하고 시적인 문구 */}
+            <h1 className="font-serif-luxury text-3xl sm:text-5xl lg:text-[52px] font-bold tracking-tight text-[#1A2825] leading-[1.2] max-w-3xl mx-auto">
+              음악을 배우고, 몸을 움직이고,<br className="hidden sm:inline" /> 생각을 나누는 공간
+            </h1>
+
+            {/* 서브 카피 */}
+            <p className="text-sm sm:text-base text-[#5E736E] font-normal max-w-xl mx-auto leading-relaxed">
+              음악과 움직임을 통해 일상에 새로운 감각을 더합니다.
+            </p>
+
+            {/* 3초 안에 직관적으로 파악되는 3대 핵심 활동 태그 */}
+            <div className="flex flex-wrap items-center justify-center gap-2 pt-1 pb-1">
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-medium bg-white/80 border border-[#A8B6C4]/60 text-[#233330] shadow-2xs">
+                <span>🎸</span> <span>어쿠스틱 &amp; 클래식 기타</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-medium bg-white/80 border border-[#A8B6C4]/60 text-[#233330] shadow-2xs">
+                <span>🩰</span> <span>발레 바 &amp; 무브먼트</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-medium bg-white/80 border border-[#A8B6C4]/60 text-[#233330] shadow-2xs">
+                <span>📖</span> <span>책과 음악의 독서 앙상블</span>
+              </span>
+            </div>
+
+            {/* 메인 이미지: 제목과 간격을 줄이고 음악과 움직임의 여백을 담은 감각적 이미지 */}
+            <div className="!mt-4 relative rounded-3xl overflow-hidden border border-[#E2ECE7] shadow-lg max-h-72 sm:max-h-84 bg-[#EDF3F0] group">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/imap_studio_hero.jpg"
-                alt="ji-stage 아틀리에 전경"
+                src="/jistage_hero.jpg"
+                alt="JI.Stage 아틀리에 전경 - 음악과 움직임이 머무는 공간"
                 className="w-full h-64 sm:h-80 object-cover object-center group-hover:scale-102 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1A2825]/60 via-[#1A2825]/10 to-transparent flex flex-col justify-end p-5 sm:p-7 text-left text-white">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-xs font-semibold w-fit mb-2 shadow-xs">
                   <span className="w-2 h-2 rounded-full bg-[#A7F3D0] shadow-[0_0_6px_#A7F3D0]" />
-                  <span>ji-stage 아틀리에</span>
+                  <span>
+                    JI<span className="text-[#D99B95] font-black">.</span>Stage 아틀리에
+                  </span>
                 </div>
                 <p className="text-sm sm:text-base font-medium text-white/95">
-                  기타 선율과 몸의 리듬, 그리고 책과 사람이 머무는 따뜻한 일상
+                  음악과 움직임을 통해 일상에 새로운 감각을 더합니다.
                 </p>
               </div>
             </div>
 
-            {/* 빠른 신청 & 둘러보기 버튼 */}
-            <div className="pt-4 flex flex-wrap items-center justify-center gap-3">
-              <InquiryTriggerButton
-                variant="cta"
-                category="독서 앙상블 / 문화 프로그램 참여"
-                label="문화 프로그램 &amp; 모임 신청"
-              />
+            {/* 탐색 중심 안내 & 참여 신청 버튼 (심리적 장벽 완화) */}
+            <div className="!mt-5 flex flex-wrap items-center justify-center gap-3">
               <a
-                href="#about"
-                className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs font-semibold bg-white/80 hover:bg-white text-[#233330] border border-[#A8B6C4] transition-all shadow-2xs active:scale-95"
+                href="#projects"
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider bg-[#4A7C72] hover:bg-[#3C665D] text-white transition-all duration-200 shadow-xs hover:shadow-sm active:scale-95 cursor-pointer"
               >
-                <span>소개 둘러보기</span>
-                <span>↓</span>
+                <span>프로그램 둘러보기</span>
+                <span className="text-[#D99B95]">↓</span>
               </a>
-            </div>
-
-            <div className="pt-2 flex flex-wrap items-center justify-center gap-3 text-xs text-[#5E736E]">
-              <span>소셜 채널 소식 연결:</span>
-              <SocialLinks variant="header" />
+              <InquiryTriggerButton
+                variant="secondary"
+                category="독서 앙상블 / 문화 프로그램 참여"
+                label="참여 신청하기"
+                className="!py-2.5 !px-5 !rounded-full"
+              />
             </div>
           </div>
         </section>
@@ -89,7 +105,7 @@ export default function Home() {
             <div className="max-w-2xl mx-auto text-center space-y-4 mb-16">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#EDF5F2] text-[#4A7C72] border border-[#D1E3DC]">
                 <span className="text-[#D99B95]">✦</span>
-                <span className="tracking-[0.16em] uppercase font-serif-luxury">About Jiae &amp; ji-stage</span>
+                <span className="tracking-[0.16em] uppercase font-serif-luxury">About Jiae &amp; JI.Stage</span>
               </div>
               <h2 className="font-serif-luxury text-3xl sm:text-4xl font-bold text-[#1A2825] tracking-tight">
                 일상의 재미를 만들고 나누는 공간
@@ -161,9 +177,9 @@ export default function Home() {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { emoji: "🎸", label: "기타 연주 & 강의", value: "10년+" },
-                  { emoji: "🎤", label: "하우스 콘서트 기획", value: "20회+" },
-                  { emoji: "🩰", label: "성인 발레 & 댄스", value: "3년차" },
+                  { emoji: "🎸", label: "기타 연주 & 강의", value: "[  ]년" },
+                  { emoji: "🎤", label: "공연 & 살롱 기획", value: "[  ]회" },
+                  { emoji: "🩰", label: "성인 발레 & 댄스", value: "[  ]년차" },
                   { emoji: "📚", label: "독서 앙상블 살롱", value: "정기 운영" },
                 ].map((stat) => (
                   <div key={stat.label} className="p-6 rounded-2xl bg-white border border-[#E2ECE7] text-center space-y-2 hover:shadow-sm transition-all">
@@ -184,7 +200,7 @@ export default function Home() {
                 </h3>
                 <p className="text-sm text-[#5E736E] leading-loose max-w-xl mx-auto">
                   거창하지 않아도 됩니다. 오늘 처음 코드를 짚은 손끝, 발레 바에서 처음 느끼는 중심, 책 속 한 문장에 고개를 끄덕이는 순간— 그 소소한 감각들이 모여 삶을 풍요롭게 합니다.
-                  ji-stage가 그 순간들의 다정한 기록이 되길 바랍니다.
+                  JI.Stage가 그 순간들의 다정한 기록이 되길 바랍니다.
                 </p>
               </div>
             </div>
@@ -195,11 +211,11 @@ export default function Home() {
               <div className="relative max-w-2xl mx-auto">
                 <div className="absolute left-5 top-0 bottom-0 w-px bg-[#D1E3DC]" />
                 {[
-                  { year: "현재", title: "ji-stage 아틀리에 운영", desc: "독서 앙상블, 무브먼트 클래스, 문화 살롱 및 협업 프로그램을 기획·운영 중" },
-                  { year: "2023", title: "독서 앙상블 살롱 런칭", desc: "책과 기타 라이브 연주를 결합한 소규모 북 살롱 모임을 정기적으로 개최" },
-                  { year: "2021", title: "성인 발레 & 신체 리듬 수련", desc: "음악과 몸의 연결에 집중하며 발레 바 스트레칭과 셔플댄스를 병행 수련" },
-                  { year: "2019", title: "음악 스튜디오 아지트 오픈", desc: "개인 음악 아틀리에를 열고 첫 동료들과 함께 소규모 공연을 시작" },
-                  { year: "~2019", title: "기타 강의 및 공연 활동", desc: "다양한 문화 공간에서 연주와 교육을 병행하며 소통의 기쁨을 체감" },
+                  { year: "현재", title: "JI.Stage 아틀리에 운영", desc: "독서 앙상블, 무브먼트 클래스, 문화 살롱 및 협업 프로그램을 기획·운영 중" },
+                  { year: "[    ]", title: "독서 앙상블 살롱 런칭", desc: "책과 기타 라이브 연주를 결합한 소규모 북 살롱 모임을 정기적으로 개최" },
+                  { year: "[    ]", title: "성인 발레 & 신체 리듬 수련", desc: "음악과 몸의 연결에 집중하며 발레 바 스트레칭과 셔플댄스를 병행 수련" },
+                  { year: "[    ]", title: "음악 스튜디오 아지트 오픈", desc: "개인 음악 아틀리에를 열고 첫 동료들과 함께 소규모 공연을 시작" },
+                  { year: "[    ]", title: "기타 강의 및 공연 활동", desc: "다양한 문화 공간에서 연주와 교육을 병행하며 소통의 기쁨을 체감" },
                 ].map((item, i) => (
                   <div key={i} className="relative pl-14 pb-8">
                     <div className="absolute left-3 top-1 w-4 h-4 rounded-full bg-[#4A7C72] border-2 border-white shadow-sm" />
@@ -263,7 +279,7 @@ export default function Home() {
                   </p>
                   <div className="p-3.5 rounded-2xl bg-[#F7FAF8] border border-[#E2ECE7] text-xs text-[#5E736E] space-y-1">
                     <p>• <strong>일정:</strong> 월 1~2회 정기 모임 (소규모 6~8인)</p>
-                    <p>• <strong>장소:</strong> ji-stage 아틀리에 &amp; 연계 문화 공간</p>
+                    <p>• <strong>장소:</strong> JI.Stage 아틀리에 &amp; 연계 문화 공간</p>
                     <p>• <strong>진행:</strong> 문장 낭독 → 나눔 → 기타 연주</p>
                     <p>• <strong>참가비:</strong> 1만원 내외 (음료 포함)</p>
                   </div>
@@ -368,7 +384,7 @@ export default function Home() {
                 {[
                   { badge: "독서 앙상블", date: "11월 셋째 주 토요일", title: "『채식주의자』 — 한강 작가 특집", desc: "노벨문학상 수상 기념 특별판. 소설 속 음악적 장면을 기타 라이브로 재현합니다.", color: "text-[#4A7C72]", bg: "bg-[#EDF5F2]", border: "border-[#D1E3DC]" },
                   { badge: "무브먼트", date: "12월 첫째 주 일요일", title: "겨울 발레 바 & 셔플 원데이 클래스", desc: "연말을 앞두고 굳어진 몸을 풀고 리듬을 되찾는 특별 원데이 클래스.", color: "text-[#D99B95]", bg: "bg-[#FAF1F0]", border: "border-[#F0D4D1]" },
-                  { badge: "살롱 콘서트", date: "12월 넷째 주", title: "ji-stage 겨울 하우스 콘서트", desc: "다정한 사람들과 함께하는 연말 살롱 콘서트. 어쿠스틱 선율과 소소한 크리스마스 무드.", color: "text-[#4A7C72]", bg: "bg-[#EDF5F2]", border: "border-[#D1E3DC]" },
+                  { badge: "살롱 콘서트", date: "12월 넷째 주", title: "JI.Stage 겨울 하우스 콘서트", desc: "다정한 사람들과 함께하는 연말 살롱 콘서트. 어쿠스틱 선율과 소소한 크리스마스 무드.", color: "text-[#4A7C72]", bg: "bg-[#EDF5F2]", border: "border-[#D1E3DC]" },
                 ].map((item, i) => (
                   <div key={i} className={`flex flex-col sm:flex-row items-start gap-4 p-5 rounded-2xl ${item.bg} border ${item.border}`}>
                     <div className="shrink-0">

@@ -27,15 +27,15 @@ export default function Navbar() {
     >
       <div className="w-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 h-16 sm:h-18 flex items-center justify-between gap-4">
         {/* =================================================================== */}
-        {/* 좌측: 세련된 타이포 브랜딩 로고 */}
+        {/* 좌측: 세련된 타이포 브랜딩 로고 (JI.Stage 시그니처 포인트) */}
         {/* =================================================================== */}
         <a
           href="#"
           className="group flex items-center gap-3 transition-transform duration-200 active:scale-98"
-          aria-label="ji-stage 홈으로 이동"
+          aria-label="JI.Stage 홈으로 이동"
         >
-          <span className="font-serif-luxury font-bold text-2xl sm:text-[26px] tracking-[0.02em] text-[#1A2825] group-hover:text-[#4A7C72] transition-colors">
-            ji-stage
+          <span className="font-serif-luxury font-bold text-2xl sm:text-[27px] tracking-tight text-[#1A2825] group-hover:text-[#4A7C72] transition-colors">
+            JI<span className="text-[#D99B95] font-black">.</span>Stage
           </span>
           <span className="hidden sm:inline-block font-serif-luxury text-[11px] tracking-[0.2em] uppercase text-[#4A7C72] font-semibold border-l border-[#A8B6C4] pl-3">
             Atelier
