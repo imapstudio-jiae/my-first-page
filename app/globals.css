@@ -1,43 +1,63 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
 
 :root {
-  --bg-main: #C1CDD9;
-  --bg-card: rgba(255, 255, 255, 0.95);
-  --bg-paper: #FFFFFF;
+  /* ======================================================== */
+  /* [JI.Stage 디자인 시스템 - 단 한 곳에서 관리하는 색상 변수] */
+  /* 아래 색상 코드 한 줄만 바꾸면 사이트 전체가 일괄 변경됩니다. */
+  /* ======================================================== */
 
-  /* Primary: Muted Sage Mint */
-  --primary: #4A7C72;
-  --primary-hover: #3C665D;
-  --primary-light: #EDF5F2;
-  --primary-border: #D1E3DC;
-  --primary-glow: rgba(74, 124, 114, 0.2);
+  /* [1. 배경 & 표면 색상: 따뜻한 리넨 베이지 & 순백 카드] */
+  --bg-main: #F7F5F0;             /* 메인 페이지 배경 (따뜻한 리넨 크림) */
+  --bg-subtle: #EFECE6;           /* 보조/구분 배경 */
+  --bg-surface: #FFFFFF;          /* 카드, 모달, 컨테이너 배경 */
+  --border-subtle: #E5E0D8;       /* 기본 테두리 및 구분선 */
+  --border-strong: #D4CDC2;       /* 진한 테두리 및 구분선 */
 
-  /* Secondary: Soft Dusty Pink / Blush */
-  --pink-accent: #D99B95;
-  --pink-hover: #C58882;
-  --pink-light: #FAF1F0;
-  --pink-border: #F0D4D1;
-  --pink-glow: rgba(217, 155, 149, 0.22);
+  /* [2. 주 색 (Primary: 믿음직하고 깊은 포레스트 세이지)] */
+  --primary: #2A473E;             /* 주 색상 (버튼, 주요 아이콘, 강조 타이틀) */
+  --primary-hover: #1F352E;       /* 주 색상 호버 */
+  --primary-light: #EAF1EE;       /* 주 색상 연한 칩/뱃지 배경 */
+  --primary-border: #C9DBD3;      /* 주 색상 연한 테두리 */
 
-  /* Warm Butter / Yellow */
-  --butter-accent: #D97706;
-  --butter-light: #FEF9E7;
-  --butter-border: #FBE6A2;
+  /* [3. 강조 색 (Accent: 따뜻하고 세련된 웜 테라코타)] */
+  --accent: #C86853;              /* 강조 색상 (시그니처 점, ✦ 보석, 주요 포인트) */
+  --accent-hover: #B05541;        /* 강조 색상 호버 */
+  --accent-light: #FBF1EE;        /* 강조 색상 연한 칩/뱃지 배경 */
+  --accent-border: #F2D5CD;       /* 강조 색상 연한 테두리 */
 
-  /* Neutral & Text */
-  --text-main: #233330;
-  --text-muted: #5E736E;
-  --text-subtle: #8FA39E;
+  /* [4. 글자 색상 (Text: 부드러운 차콜 & 차분한 슬레이트 모스)] */
+  --text-main: #1E2523;           /* 주요 텍스트 (제목 및 메인 본문) */
+  --text-muted: #5A6763;          /* 보조 텍스트 (서브 카피 및 설명) */
+  --text-subtle: #8A9692;         /* 캡션, 날짜, 메타 정보 */
 
-  --border-color: #E2ECE7;
-  --border-active: #4A7C72;
-
+  /* [5. 글꼴 (Font Family: Pretendard + Cormorant Garamond)] */
   --font-serif: 'Cormorant Garamond', 'Gowun Batang', Georgia, serif;
-  --font-sans: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+  --font-sans: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
 }
 
 @theme inline {
+  --color-bg-main: var(--bg-main);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-bg-surface: var(--bg-surface);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-strong: var(--border-strong);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-light: var(--primary-light);
+  --color-primary-border: var(--primary-border);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-light: var(--accent-light);
+  --color-accent-border: var(--accent-border);
+
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  --color-text-subtle: var(--text-subtle);
+
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);
 }
@@ -73,41 +93,6 @@ body {
   display: none;
 }
 
-.pastel-glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.55;
-  animation: floatOrb 18s ease-in-out infinite alternate;
-}
-
-.glow-mint {
-  width: 540px;
-  height: 540px;
-  background: radial-gradient(circle, #D8ECE5 0%, #C4E2D8 100%);
-  top: -120px;
-  left: -100px;
-}
-
-.glow-pink {
-  width: 540px;
-  height: 540px;
-  background: radial-gradient(circle, #FDEBE8 0%, #F8DAD6 100%);
-  bottom: -130px;
-  right: -90px;
-  animation-duration: 22s;
-  animation-direction: alternate-reverse;
-}
-
-@keyframes floatOrb {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-  100% {
-    transform: translate(30px, 20px) scale(1.06);
-  }
-}
-
 /* Elegant Brand Divider with Diamond */
 .brand-divider {
   display: flex;
@@ -121,11 +106,11 @@ body {
 .divider-line {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #CBDCD6, transparent);
+  background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
 }
 
 .divider-gem {
-  color: var(--pink-accent);
+  color: var(--accent);
   font-size: 0.72rem;
 }
 

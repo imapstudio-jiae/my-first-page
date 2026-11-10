@@ -21,7 +21,7 @@ export default function SocialLinks({
           href={youtube.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 text-[#D99B95] hover:bg-[#FAF1F0] bg-white border border-[#E2ECE7]"
+          className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 text-[var(--accent)] hover:bg-[var(--accent-light)] bg-white border border-[var(--border-subtle)]"
           title={`${youtube.name} 바로가기`}
           aria-label={youtube.name}
         >
@@ -35,7 +35,7 @@ export default function SocialLinks({
           href={instagram.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 text-[#D99B95] hover:bg-[#FAF1F0] bg-white border border-[#E2ECE7]"
+          className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 text-[var(--accent)] hover:bg-[var(--accent-light)] bg-white border border-[var(--border-subtle)]"
           title={`${instagram.name} 바로가기`}
           aria-label={instagram.name}
         >
@@ -49,7 +49,7 @@ export default function SocialLinks({
           href={naverBlog.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 text-[#4A7C72] hover:bg-[#EDF5F2] bg-white border border-[#E2ECE7] font-black text-xs"
+          className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 text-[var(--primary)] hover:bg-[var(--primary-light)] bg-white border border-[var(--border-subtle)] font-black text-xs"
           title={`${naverBlog.name} 바로가기`}
           aria-label={naverBlog.name}
         >
@@ -59,7 +59,7 @@ export default function SocialLinks({
     );
   }
 
-  // Footer or Banner Mode with labels & soft pastel backgrounds
+  // Footer or Banner Mode
   return (
     <div className={`flex flex-wrap items-center gap-2.5 ${className}`}>
       {/* YouTube Button */}
@@ -67,14 +67,14 @@ export default function SocialLinks({
         href={youtube.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center gap-2.5 px-4 py-2.5 rounded-2xl border text-xs font-medium transition-all duration-200 hover:scale-102 active:scale-98 bg-white border-[#E2ECE7] hover:border-[#D99B95] shadow-xs"
+        className="group flex items-center gap-2.5 px-4 py-2.5 rounded-2xl border text-xs font-medium transition-all duration-200 hover:scale-102 active:scale-98 bg-white border-[var(--border-subtle)] hover:border-[var(--accent)] shadow-xs"
       >
-        <span className="w-5 h-5 rounded-full bg-[#FAF1F0] text-[#D99B95] flex items-center justify-center text-[10px] font-bold">
+        <span className="w-5 h-5 rounded-full bg-[var(--accent-light)] text-[var(--accent)] flex items-center justify-center text-[10px] font-bold">
           ▶
         </span>
         <div className="flex flex-col text-left">
-          <span className="font-semibold text-xs text-[#233330]">{youtube.name}</span>
-          <span className="text-[10px] text-[#8FA39E]">{youtube.handle}</span>
+          <span className="font-semibold text-xs text-[var(--text-main)]">{youtube.name}</span>
+          <span className="text-[10px] text-[var(--text-subtle)]">{youtube.handle}</span>
         </div>
       </a>
 
@@ -83,14 +83,14 @@ export default function SocialLinks({
         href={instagram.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center gap-2.5 px-4 py-2.5 rounded-2xl border text-xs font-medium transition-all duration-200 hover:scale-102 active:scale-98 bg-white border-[#E2ECE7] hover:border-[#D99B95] shadow-xs"
+        className="group flex items-center gap-2.5 px-4 py-2.5 rounded-2xl border text-xs font-medium transition-all duration-200 hover:scale-102 active:scale-98 bg-white border-[var(--border-subtle)] hover:border-[var(--accent)] shadow-xs"
       >
-        <span className="w-5 h-5 rounded-full bg-[#FAF1F0] text-[#D99B95] flex items-center justify-center text-[10px]">
+        <span className="w-5 h-5 rounded-full bg-[var(--accent-light)] text-[var(--accent)] flex items-center justify-center text-[10px]">
           📷
         </span>
         <div className="flex flex-col text-left">
-          <span className="font-semibold text-xs text-[#233330]">{instagram.name}</span>
-          <span className="text-[10px] text-[#8FA39E]">{instagram.handle}</span>
+          <span className="font-semibold text-xs text-[var(--text-main)]">{instagram.name}</span>
+          <span className="text-[10px] text-[var(--text-subtle)]">{instagram.handle}</span>
         </div>
       </a>
 
@@ -99,14 +99,14 @@ export default function SocialLinks({
         href={naverBlog.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center gap-2.5 px-4 py-2.5 rounded-2xl border text-xs font-medium transition-all duration-200 hover:scale-102 active:scale-98 bg-white border-[#E2ECE7] hover:border-[#4A7C72] shadow-xs"
+        className="group flex items-center gap-2.5 px-4 py-2.5 rounded-2xl border text-xs font-medium transition-all duration-200 hover:scale-102 active:scale-98 bg-white border-[var(--border-subtle)] hover:border-[var(--primary)] shadow-xs"
       >
-        <span className="w-5 h-5 rounded-full bg-[#EDF5F2] text-[#4A7C72] flex items-center justify-center text-[11px] font-black">
+        <span className="w-5 h-5 rounded-full bg-[var(--primary-light)] text-[var(--primary)] flex items-center justify-center text-[11px] font-black">
           N
         </span>
         <div className="flex flex-col text-left">
-          <span className="font-semibold text-xs text-[#233330]">{naverBlog.name}</span>
-          <span className="text-[10px] text-[#8FA39E]">{naverBlog.handle}</span>
+          <span className="font-semibold text-xs text-[var(--text-main)]">{naverBlog.name}</span>
+          <span className="text-[10px] text-[var(--text-subtle)]">{naverBlog.handle}</span>
         </div>
       </a>
     </div>

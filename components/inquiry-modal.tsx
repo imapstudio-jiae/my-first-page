@@ -15,7 +15,7 @@ export default function InquiryModal() {
   const [formData, setFormData] = useState({
     name: "",
     contact: "",
-    category: "기타 레슨 / 스튜디오 문의",
+    category: "독서 앙상블 / 문화 프로그램 참여",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -70,12 +70,11 @@ export default function InquiryModal() {
     }
 
     setIsSubmitting(true);
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
@@ -99,7 +98,7 @@ export default function InquiryModal() {
     setFormData({
       name: "",
       contact: "",
-      category: "기타 레슨 / 스튜디오 문의",
+      category: "독서 앙상블 / 문화 프로그램 참여",
       message: "",
     });
     setErrorMessage("");
@@ -109,20 +108,20 @@ export default function InquiryModal() {
 
   return (
     <>
-      {/* 우측 하단 플로팅 문의하기 버튼 (뮤티드 민트 & 더스티 핑크 글로우) */}
+      {/* 우측 하단 플로팅 문의하기 버튼 */}
       <button
-        onClick={() => openInquiryModal("기타 레슨 / 스튜디오 문의")}
-        className="fixed bottom-6 right-6 z-40 group flex items-center gap-2.5 px-5 py-3 rounded-full shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer border border-[#D1E3DC] bg-white text-[#233330]"
+        onClick={() => openInquiryModal("독서 앙상블 / 문화 프로그램 참여")}
+        className="fixed bottom-6 right-6 z-40 group flex items-center gap-2.5 px-5 py-3 rounded-full shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer border border-[var(--border-subtle)] bg-white text-[var(--text-main)]"
         id="floating-inquiry-btn"
         aria-label="문의사항 남기기"
       >
-        <span className="w-6 h-6 rounded-full bg-[#EDF5F2] text-[#4A7C72] flex items-center justify-center text-xs group-hover:rotate-12 transition-transform font-bold">
+        <span className="w-6 h-6 rounded-full bg-[var(--primary-light)] text-[var(--primary)] flex items-center justify-center text-xs group-hover:rotate-12 transition-transform font-bold">
           ✦
         </span>
         <span className="font-semibold text-xs tracking-tight">상담 및 신청</span>
         <span className="relative flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D99B95] opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D99B95]"></span>
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--accent)] opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--accent)]"></span>
         </span>
       </button>
 
@@ -135,25 +134,25 @@ export default function InquiryModal() {
             if (e.target === e.currentTarget) setIsOpen(false);
           }}
         >
-          <div className="w-full max-w-lg rounded-3xl border border-[#E2ECE7] bg-[#F7FAF8] shadow-2xl overflow-hidden animate-scaleUp">
+          <div className="w-full max-w-lg rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-main)] shadow-2xl overflow-hidden animate-scaleUp">
             {/* Modal Header */}
-            <div className="px-6 py-5 border-b border-[#E2ECE7] bg-white flex items-center justify-between">
+            <div className="px-6 py-5 border-b border-[var(--border-subtle)] bg-white flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-2xl bg-[#EDF5F2] text-[#4A7C72] flex items-center justify-center text-lg">
+                <div className="w-10 h-10 rounded-2xl bg-[var(--primary-light)] text-[var(--primary)] flex items-center justify-center text-lg">
                   ✦
                 </div>
                 <div>
-                  <span className="text-[10px] tracking-[0.18em] uppercase text-[#4A7C72] font-semibold font-serif-luxury">
+                  <span className="text-[10px] tracking-[0.18em] uppercase text-[var(--primary)] font-semibold font-serif-luxury">
                     Reservation & Inquiry
                   </span>
-                  <h3 className="text-base font-bold text-[#1A2825] font-serif-luxury">
+                  <h3 className="text-base font-bold text-[var(--text-main)] font-serif-luxury">
                     상담 및 참여 신청
                   </h3>
                 </div>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="w-8 h-8 rounded-full flex items-center justify-center text-sm text-[#8FA39E] hover:text-[#233330] hover:bg-stone-100 transition-colors cursor-pointer"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-sm text-[var(--text-subtle)] hover:text-[var(--text-main)] hover:bg-stone-100 transition-colors cursor-pointer"
                 aria-label="닫기"
               >
                 ✕
@@ -164,13 +163,13 @@ export default function InquiryModal() {
             <div className="p-6">
               {isSubmitted ? (
                 <div className="text-center py-8 space-y-4">
-                  <div className="w-16 h-16 rounded-full mx-auto flex items-center justify-center text-2xl shadow-sm bg-[#EDF5F2] text-[#4A7C72] border border-[#D1E3DC] animate-bounce">
+                  <div className="w-16 h-16 rounded-full mx-auto flex items-center justify-center text-2xl shadow-sm bg-[var(--primary-light)] text-[var(--primary)] border border-[var(--primary-border)] animate-bounce">
                     ✓
                   </div>
-                  <h4 className="text-lg font-bold text-[#1A2825] font-serif-luxury">
+                  <h4 className="text-lg font-bold text-[var(--text-main)] font-serif-luxury">
                     신청이 성공적으로 접수되었습니다
                   </h4>
-                  <p className="text-xs sm:text-sm text-[#5E736E] leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
                     남겨주신 메시지를 꼼꼼히 확인한 후,<br />
                     기재해주신 연락처나 이메일로 다정하게 안내드리겠습니다.
                   </p>
@@ -178,7 +177,7 @@ export default function InquiryModal() {
                   <div className="pt-4 flex justify-center">
                     <button
                       onClick={handleReset}
-                      className="px-6 py-2.5 rounded-full font-semibold text-xs bg-[#4A7C72] hover:bg-[#3C665D] text-white transition-all cursor-pointer shadow-xs"
+                      className="px-6 py-2.5 rounded-full font-semibold text-xs bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white transition-all cursor-pointer shadow-xs"
                     >
                       확인 완료
                     </button>
@@ -187,7 +186,7 @@ export default function InquiryModal() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   {errorMessage && (
-                    <div className="p-3 rounded-2xl text-xs flex items-start gap-2 border bg-[#FAF1F0] border-[#F0D4D1] text-[#C58882] leading-relaxed">
+                    <div className="p-3 rounded-2xl text-xs flex items-start gap-2 border bg-[var(--accent-light)] border-[var(--accent-border)] text-[var(--accent-hover)] leading-relaxed">
                       <span>⚠️</span>
                       <span>{errorMessage}</span>
                     </div>
@@ -195,8 +194,8 @@ export default function InquiryModal() {
 
                   {/* 카테고리 선택 */}
                   <div>
-                    <label className="block text-xs font-semibold text-[#5E736E] mb-1.5">
-                      상담 및 신청 유형 <span className="text-[#D99B95]">*</span>
+                    <label className="block text-xs font-semibold text-[var(--text-muted)] mb-1.5">
+                      상담 및 신청 유형 <span className="text-[var(--accent)]">*</span>
                     </label>
                     <div className="grid grid-cols-2 gap-2">
                       {[
@@ -232,8 +231,8 @@ export default function InquiryModal() {
                           }
                           className={`p-2.5 rounded-xl border text-xs font-medium text-left flex items-center gap-2 transition-all cursor-pointer ${
                             formData.category === cat.val
-                              ? "bg-white border-[#4A7C72] text-[#4A7C72] ring-1 ring-[#4A7C72] shadow-2xs font-semibold"
-                              : "bg-white/70 border-[#E2ECE7] text-[#5E736E] hover:bg-white"
+                              ? "bg-white border-[var(--primary)] text-[var(--primary)] ring-1 ring-[var(--primary)] shadow-2xs font-semibold"
+                              : "bg-white/70 border-[var(--border-subtle)] text-[var(--text-muted)] hover:bg-white"
                           }`}
                         >
                           <span>{cat.icon}</span>
@@ -245,8 +244,8 @@ export default function InquiryModal() {
 
                   {/* 성함 */}
                   <div>
-                    <label className="block text-xs font-semibold text-[#5E736E] mb-1">
-                      성함 / 닉네임 <span className="text-[#D99B95]">*</span>
+                    <label className="block text-xs font-semibold text-[var(--text-muted)] mb-1">
+                      성함 / 닉네임 <span className="text-[var(--accent)]">*</span>
                     </label>
                     <input
                       type="text"
@@ -256,15 +255,15 @@ export default function InquiryModal() {
                         setFormData({ ...formData, name: e.target.value })
                       }
                       placeholder="예: 김지수"
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-[#E2ECE7] bg-white text-xs text-[#233330] focus:outline-none focus:ring-2 focus:ring-[#4A7C72]/30 focus:border-[#4A7C72] placeholder:text-[#8FA39E]"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-[var(--border-subtle)] bg-white text-xs text-[var(--text-main)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/30 focus:border-[var(--primary)] placeholder:text-[var(--text-subtle)]"
                     />
                   </div>
 
                   {/* 연락처 */}
                   <div>
-                    <label className="block text-xs font-semibold text-[#5E736E] mb-1">
+                    <label className="block text-xs font-semibold text-[var(--text-muted)] mb-1">
                       연락처 또는 이메일{" "}
-                      <span className="text-[#D99B95]">*</span>
+                      <span className="text-[var(--accent)]">*</span>
                     </label>
                     <input
                       type="text"
@@ -274,14 +273,14 @@ export default function InquiryModal() {
                         setFormData({ ...formData, contact: e.target.value })
                       }
                       placeholder="예: 010-1234-5678 또는 name@example.com"
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-[#E2ECE7] bg-white text-xs text-[#233330] focus:outline-none focus:ring-2 focus:ring-[#4A7C72]/30 focus:border-[#4A7C72] placeholder:text-[#8FA39E]"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-[var(--border-subtle)] bg-white text-xs text-[var(--text-main)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/30 focus:border-[var(--primary)] placeholder:text-[var(--text-subtle)]"
                     />
                   </div>
 
                   {/* 메시지 */}
                   <div>
-                    <label className="block text-xs font-semibold text-[#5E736E] mb-1">
-                      남기실 메시지 <span className="text-[#D99B95]">*</span>
+                    <label className="block text-xs font-semibold text-[var(--text-muted)] mb-1">
+                      남기실 메시지 <span className="text-[var(--accent)]">*</span>
                     </label>
                     <textarea
                       required
@@ -291,7 +290,7 @@ export default function InquiryModal() {
                         setFormData({ ...formData, message: e.target.value })
                       }
                       placeholder="기타 경험 여부, 원하시는 레슨 형태(1:1/그룹), 또는 참여하고 싶은 문화 프로그램 일정을 적어주세요 :)"
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-[#E2ECE7] bg-white text-xs text-[#233330] focus:outline-none focus:ring-2 focus:ring-[#4A7C72]/30 focus:border-[#4A7C72] placeholder:text-[#8FA39E] resize-none leading-relaxed"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-[var(--border-subtle)] bg-white text-xs text-[var(--text-main)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/30 focus:border-[var(--primary)] placeholder:text-[var(--text-subtle)] resize-none leading-relaxed"
                     />
                   </div>
 
@@ -300,14 +299,14 @@ export default function InquiryModal() {
                     <button
                       type="button"
                       onClick={() => setIsOpen(false)}
-                      className="px-4 py-2.5 rounded-xl text-xs font-medium text-[#8FA39E] hover:bg-stone-100 transition-colors cursor-pointer"
+                      className="px-4 py-2.5 rounded-xl text-xs font-medium text-[var(--text-subtle)] hover:bg-stone-100 transition-colors cursor-pointer"
                     >
                       취소
                     </button>
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="px-6 py-2.5 rounded-xl font-bold text-xs bg-[#4A7C72] hover:bg-[#3C665D] text-white transition-all cursor-pointer shadow-xs disabled:opacity-50"
+                      className="px-6 py-2.5 rounded-xl font-bold text-xs bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white transition-all cursor-pointer shadow-xs disabled:opacity-50"
                     >
                       {isSubmitting ? "전송 중..." : "신청 보내기 →"}
                     </button>

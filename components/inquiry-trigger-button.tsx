@@ -11,7 +11,7 @@ interface InquiryTriggerButtonProps {
 
 export default function InquiryTriggerButton({
   variant = "cta",
-  category = "기타 레슨 / 스튜디오 문의",
+  category = "독서 앙상블 / 문화 프로그램 참여",
   label = "문의하기",
   className = "",
 }: InquiryTriggerButtonProps) {
@@ -19,7 +19,7 @@ export default function InquiryTriggerButton({
     return (
       <button
         onClick={() => openInquiryModal(category)}
-        className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold bg-[#4A7C72] hover:bg-[#3C665D] text-white transition-all duration-200 shadow-xs hover:shadow-sm active:scale-95 cursor-pointer ${className}`}
+        className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white transition-all duration-200 shadow-xs hover:shadow-sm active:scale-95 cursor-pointer ${className}`}
         id="header-inquiry-btn"
       >
         <span>💬</span>
@@ -32,9 +32,9 @@ export default function InquiryTriggerButton({
     return (
       <button
         onClick={() => openInquiryModal(category)}
-        className={`inline-flex items-center gap-2 px-5 py-3 rounded-2xl font-semibold text-xs border border-[#E2ECE7] bg-white/90 hover:bg-[#EDF5F2] hover:border-[#D1E3DC] text-[#233330] transition-all duration-200 active:scale-95 cursor-pointer shadow-xs ${className}`}
+        className={`inline-flex items-center gap-2 px-5 py-3 rounded-2xl font-semibold text-xs border border-[var(--border-subtle)] bg-white/90 hover:bg-[var(--primary-light)] hover:border-[var(--primary-border)] text-[var(--text-main)] transition-all duration-200 active:scale-95 cursor-pointer shadow-xs ${className}`}
       >
-        <span className="text-[#D99B95]">✦</span>
+        <span className="text-[var(--accent)]">✦</span>
         <span>{label}</span>
       </button>
     );
@@ -43,12 +43,11 @@ export default function InquiryTriggerButton({
   return (
     <button
       onClick={() => openInquiryModal(category)}
-      className={`inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 hover:scale-103 active:scale-97 cursor-pointer shadow-md bg-[#4A7C72] hover:bg-[#3C665D] text-white ${className}`}
+      className={`inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 hover:scale-103 active:scale-97 cursor-pointer shadow-md bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white ${className}`}
       id="cta-inquiry-btn"
     >
-      <span className="text-[#D99B95]">✦</span>
+      <span className="text-[var(--accent)]">✦</span>
       <span>{label}</span>
-      <span>→</span>
     </button>
   );
 }

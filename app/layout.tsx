@@ -50,7 +50,7 @@ export default function RootLayout({
       lang="ko"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans bg-[#C1CDD9] text-[#233330] selection:bg-[#D1E3DC] selection:text-[#1A2825]">
+      <body className="min-h-full flex flex-col font-sans bg-[var(--bg-main)] text-[var(--text-main)] selection:bg-[var(--primary-light)] selection:text-[var(--primary)]">
         {children}
       </body>
     </html>
