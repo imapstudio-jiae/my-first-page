@@ -114,16 +114,16 @@ export default function Home() {
 
             {/* 3가지 정체성 카드 */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-              <div className="p-8 rounded-3xl bg-[var(--bg-main)] border border-[var(--border-subtle)] space-y-4 hover:border-[var(--primary)]/50 hover:shadow-md transition-all">
-                <div className="w-12 h-12 rounded-2xl bg-white border border-[var(--border-subtle)] flex items-center justify-center text-xl shadow-2xs">🎸</div>
+              <div className="p-8 rounded-3xl bg-[var(--bg-main)] border border-[var(--border-subtle)] space-y-4 hover:border-[var(--accent)]/60 hover:shadow-md transition-all">
+                <div className="w-12 h-12 rounded-2xl bg-white border border-[var(--accent-border)] flex items-center justify-center text-xl shadow-2xs">🎸</div>
                 <div className="space-y-1">
-                  <span className="text-xs font-bold text-[var(--primary)] tracking-[0.12em] uppercase font-serif-luxury">Music &amp; Acoustic · 음악</span>
+                  <span className="text-xs font-bold text-[var(--accent)] tracking-[0.12em] uppercase font-serif-luxury">Music &amp; Acoustic · 음악</span>
                   <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">기타 연주 &amp; 공연 기획</h3>
                 </div>
                 <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
                   클래식, 어쿠스틱, 핑거스타일 기타를 함께 나누고 가르칩니다. 혼자 연습하는 즐거움을 넘어 무대 위에서 소리를 모으는 정기 공연을 기획합니다.
                 </p>
-                <div className="pt-2 text-xs font-semibold text-[var(--primary)]">#어쿠스틱 #앙상블합주 #하우스콘서트</div>
+                <div className="pt-2 text-xs font-semibold text-[var(--accent)]">#어쿠스틱 #앙상블합주 #하우스콘서트</div>
               </div>
 
               <div className="p-8 rounded-3xl bg-[var(--bg-main)] border border-[var(--border-subtle)] space-y-4 hover:border-[var(--accent)]/60 hover:shadow-md transition-all">
@@ -138,16 +138,16 @@ export default function Home() {
                 <div className="pt-2 text-xs font-semibold text-[var(--accent)]">#성인발레 #셔플댄스 #몸의감각</div>
               </div>
 
-              <div className="p-8 rounded-3xl bg-[var(--bg-main)] border border-[var(--border-subtle)] space-y-4 hover:border-[var(--primary)]/50 hover:shadow-md transition-all">
-                <div className="w-12 h-12 rounded-2xl bg-white border border-[var(--border-subtle)] flex items-center justify-center text-xl shadow-2xs">📖</div>
+              <div className="p-8 rounded-3xl bg-[var(--bg-main)] border border-[var(--border-subtle)] space-y-4 hover:border-[var(--accent)]/60 hover:shadow-md transition-all">
+                <div className="w-12 h-12 rounded-2xl bg-white border border-[var(--accent-border)] flex items-center justify-center text-xl shadow-2xs">📖</div>
                 <div className="space-y-1">
-                  <span className="text-xs font-bold text-[var(--primary)] tracking-[0.12em] uppercase font-serif-luxury">Culture Salon · 연결</span>
+                  <span className="text-xs font-bold text-[var(--accent)] tracking-[0.12em] uppercase font-serif-luxury">Culture Salon · 연결</span>
                   <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">책과 음악이 있는 문화 기획</h3>
                 </div>
                 <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
                   책 속 문장에 어쿠스틱 선율을 얹는 &apos;독서 앙상블&apos;부터, 움직임 워크숍과 소규모 살롱 콘서트까지. 공간과 사람이 다정하게 연결되는 프로그램을 만듭니다.
                 </p>
-                <div className="pt-2 text-xs font-semibold text-[var(--primary)]">#독서앙상블 #문화살롱 #공간협업</div>
+                <div className="pt-2 text-xs font-semibold text-[var(--accent)]">#독서앙상블 #문화살롱 #공간협업</div>
               </div>
             </div>
 
@@ -262,11 +262,11 @@ export default function Home() {
             {/* 3대 프로젝트 카드 */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
               {/* 독서 앙상블 */}
-              <div className="p-8 rounded-3xl bg-white border border-[var(--border-subtle)] flex flex-col justify-between hover:border-[var(--primary)]/50 hover:shadow-md transition-all">
+              <div className="p-8 rounded-3xl bg-white border border-[var(--border-subtle)] flex flex-col justify-between hover:border-[var(--accent)]/60 hover:shadow-md transition-all">
                 <div className="space-y-4">
                   <span className="text-2xl">📖🎶</span>
                   <div className="space-y-1">
-                    <span className="text-xs font-bold text-[var(--primary)] tracking-[0.12em] uppercase font-serif-luxury">Signature Salon</span>
+                    <span className="text-xs font-bold text-[var(--accent)] tracking-[0.12em] uppercase font-serif-luxury">Signature Salon</span>
                     <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">독서 앙상블 (Reading Ensemble)</h3>
                   </div>
                   <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
@@ -279,7 +279,7 @@ export default function Home() {
                     <p>• <strong>참가비:</strong> 1만원 내외 (음료 포함)</p>
                   </div>
                   <div className="space-y-2 pt-2">
-                    <p className="text-[11px] font-bold text-[var(--primary)] uppercase tracking-wider font-serif-luxury">최근 읽은 책들</p>
+                    <p className="text-[11px] font-bold text-[var(--accent)] uppercase tracking-wider font-serif-luxury">최근 읽은 책들</p>
                     {["『채식주의자』— 한강", "『달러구트 꿈 백화점』— 이미예", "『아몬드』— 손원평"].map((book) => (
                       <p key={book} className="text-[11px] text-[var(--text-muted)]">📚 {book}</p>
                     ))}
@@ -334,11 +334,11 @@ export default function Home() {
               </div>
 
               {/* 살롱 콘서트 & 공간 협업 */}
-              <div className="p-8 rounded-3xl bg-white border border-[var(--border-subtle)] flex flex-col justify-between hover:border-[var(--primary)]/50 hover:shadow-md transition-all">
+              <div className="p-8 rounded-3xl bg-white border border-[var(--border-subtle)] flex flex-col justify-between hover:border-[var(--accent)]/60 hover:shadow-md transition-all">
                 <div className="space-y-4">
                   <span className="text-2xl">☕🎪</span>
                   <div className="space-y-1">
-                    <span className="text-xs font-bold text-[var(--primary)] tracking-[0.12em] uppercase font-serif-luxury">Collaboration</span>
+                    <span className="text-xs font-bold text-[var(--accent)] tracking-[0.12em] uppercase font-serif-luxury">Collaboration</span>
                     <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">살롱 콘서트 &amp; 공간 협업</h3>
                   </div>
                   <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
@@ -351,7 +351,7 @@ export default function Home() {
                     <p>• <strong>문의:</strong> 공간 대관 및 협업 제안</p>
                   </div>
                   <div className="space-y-2 pt-2">
-                    <p className="text-[11px] font-bold text-[var(--primary)] uppercase tracking-wider font-serif-luxury">협업 사례</p>
+                    <p className="text-[11px] font-bold text-[var(--accent)] uppercase tracking-wider font-serif-luxury">협업 사례</p>
                     {[
                       "🎸 어쿠스틱 기타 × 첼로 2인 하우스 콘서트",
                       "📚 출판사 작가와의 북 토크 + 라이브",
