@@ -32,20 +32,20 @@ export const SITE_CONFIG = {
   social: {
     youtube: {
       name: "유튜브",
-      url: "https://www.youtube.com/@ji-stage",
-      handle: "@ji-stage",
+      url: "https://www.youtube.com/@imapstudio",
+      handle: "@imapstudio",
       description: "연주 영상, 발레·댄스 기록, 일상 브이로그",
     },
     instagram: {
       name: "인스타그램",
-      url: "https://www.instagram.com/ji_stage",
-      handle: "@ji_stage",
+      url: "https://www.instagram.com/jiaemuya",
+      handle: "@jiaemuya",
       description: "일상, 발레·댄스 모먼트, 문화 모임 소식",
     },
     naverBlog: {
       name: "네이버 블로그",
-      url: "https://blog.naver.com/ji-stage",
-      handle: "ji-stage 블로그",
+      url: "https://blog.naver.com/imapstudio",
+      handle: "imapstudio 블로그",
       description: "독서 앙상블 후기, 긴 호흡의 생각과 기록",
     },
   },

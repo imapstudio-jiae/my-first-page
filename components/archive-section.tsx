@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { ARCHIVE_ITEMS, ArchiveItem } from "@/data/archive";
+import { SITE_CONFIG } from "@/data/site-config";
 
 export default function ArchiveSection() {
   const [activeTab, setActiveTab] = useState<"all" | "youtube" | "blog">("all");
@@ -45,10 +46,6 @@ export default function ArchiveSection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[var(--primary-light)] text-[var(--primary)] border border-[var(--primary-border)]">
-              <span className="text-[var(--accent)]">✦</span>
-              <span className="tracking-[0.16em] uppercase font-serif-luxury">Archive & Media</span>
-            </div>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[var(--text-main)] font-serif-luxury">
               ARCHIVE
             </h2>
@@ -184,7 +181,7 @@ export default function ArchiveSection() {
             </p>
           </div>
           <a
-            href="https://www.youtube.com/@ji-stage"
+            href={SITE_CONFIG.social.youtube.url}
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2.5 rounded-full text-xs font-semibold bg-white border border-[var(--border-subtle)] hover:bg-[var(--primary-light)] text-[var(--text-main)] whitespace-nowrap transition-all shadow-2xs cursor-pointer"

@@ -4,7 +4,7 @@ import InquiryModal from "@/components/inquiry-modal";
 import ArchiveSection from "@/components/archive-section";
 import InquiryTriggerButton from "@/components/inquiry-trigger-button";
 import SocialLinks from "@/components/social-links";
-import { SITE_CONFIG } from "@/data/site-config";
+import B2BInquiryForm from "@/components/b2b-inquiry-form";
 
 export default function Home() {
   return (
@@ -13,249 +13,212 @@ export default function Home() {
 
       <main className="flex-1 relative z-10">
         {/* ========================================================= */}
-        {/* HERO SECTION : JI.Stage 첫 화면 (믿음직하고 세련된 아틀리에) */}
+        {/* HERO SECTION : 군더더기 없이 깔끔한 타이틀과 아지트 공간 이미지 */}
         {/* ========================================================= */}
-        <section className="pt-6 pb-12 sm:pt-10 sm:pb-16">
-          <div className="max-w-4xl mx-auto px-5 sm:px-8 text-center space-y-3.5">
-            {/* 상단 서브 라벨 (시그니처 포인트 로고 스타일) */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-white/80 backdrop-blur-xs text-[var(--primary)] border border-[var(--border-subtle)] shadow-2xs">
-              <span className="font-serif-luxury font-bold tracking-tight text-[var(--text-main)]">
-                JI<span className="text-[var(--accent)] font-black">.</span>Stage
-              </span>
-              <span className="text-[var(--border-strong)]">·</span>
-              <span className="tracking-[0.18em] uppercase font-serif-luxury text-[11px] text-[var(--primary)]">
-                Culture &amp; Movement
-              </span>
-            </div>
-
-            {/* 메인 카피: 명확하고 시적인 문구 */}
-            <h1 className="font-serif-luxury text-3xl sm:text-5xl lg:text-[52px] font-bold tracking-tight text-[var(--text-main)] leading-[1.2] max-w-3xl mx-auto">
-              음악을 배우고, 몸을 움직이고,<br className="hidden sm:inline" /> 생각을 나누는 공간
+        <section className="pt-10 pb-14 sm:pt-16 sm:pb-20">
+          <div className="max-w-4xl mx-auto px-5 sm:px-8 text-center space-y-5">
+            <h1 className="font-serif-luxury text-3xl sm:text-5xl lg:text-[52px] font-bold tracking-tight text-[var(--text-main)] leading-[1.25] max-w-3xl mx-auto">
+              바쁜 일상 속,
+              <br className="hidden sm:inline" /> 자기만의 리듬과 감각을 되찾는 무대
             </h1>
 
-            {/* 서브 카피 */}
-            <p className="text-sm sm:text-base text-[var(--text-muted)] font-normal max-w-xl mx-auto leading-relaxed">
-              음악과 움직임을 통해 일상에 새로운 감각을 더합니다.
+            <p className="text-sm sm:text-base text-[var(--text-muted)] font-normal max-w-2xl mx-auto leading-relaxed">
+              음악을 배우고, 몸을 움직이고, 생각을 나누며 온전한 나로 숨 쉬는 곳 &amp; 문화 기획 스튜디오, JI.Stage
             </p>
 
-            {/* 3초 안에 직관적으로 파악되는 3대 핵심 활동 태그 */}
-            <div className="flex flex-wrap items-center justify-center gap-2 pt-1 pb-1">
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-medium bg-white border border-[var(--border-subtle)] text-[var(--text-main)] shadow-2xs">
-                <span>🎸</span> <span>어쿠스틱 &amp; 클래식 기타</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-medium bg-white border border-[var(--border-subtle)] text-[var(--text-main)] shadow-2xs">
-                <span>🩰</span> <span>발레 바 &amp; 무브먼트</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-medium bg-white border border-[var(--border-subtle)] text-[var(--text-main)] shadow-2xs">
-                <span>📖</span> <span>책과 음악의 독서 앙상블</span>
-              </span>
-            </div>
-
-            {/* 메인 이미지: 제목과 간격을 줄이고 음악과 움직임의 여백을 담은 감각적 이미지 */}
-            <div className="!mt-4 relative rounded-3xl overflow-hidden border border-[var(--border-subtle)] shadow-lg max-h-72 sm:max-h-84 bg-[var(--bg-subtle)] group">
+            {/* 메인 이미지: 뱃지나 오버레이 없이 깔끔한 공간 사진 */}
+            <div className="!mt-7 relative rounded-3xl overflow-hidden border border-[var(--border-subtle)] shadow-lg bg-[var(--bg-subtle)] group">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/jistage_hero.jpg"
-                alt="JI.Stage 아틀리에 전경 - 음악과 움직임이 머무는 공간"
-                className="w-full h-64 sm:h-80 object-cover object-center group-hover:scale-102 transition-transform duration-700"
+                alt="JI.Stage 아틀리에 전경 - 음악과 움직임이 머무는 프라이빗 아지트"
+                className="w-full h-64 sm:h-88 object-cover object-center group-hover:scale-102 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--text-main)]/70 via-[var(--text-main)]/15 to-transparent flex flex-col justify-end p-5 sm:p-7 text-left text-white">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-xs font-semibold w-fit mb-2 shadow-xs">
-                  <span className="w-2 h-2 rounded-full bg-[#A7F3D0] shadow-[0_0_6px_#A7F3D0]" />
-                  <span>
-                    JI<span className="text-[var(--accent)] font-black">.</span>Stage 아틀리에
-                  </span>
-                </div>
-                <p className="text-sm sm:text-base font-medium text-white/95">
-                  음악과 움직임을 통해 일상에 새로운 감각을 더합니다.
-                </p>
-              </div>
             </div>
 
-            {/* 탐색 중심 안내 & 참여 신청 버튼 */}
-            <div className="!mt-5 flex flex-wrap items-center justify-center gap-3">
+            {/* 행동 유도 버튼 */}
+            <div className="!mt-7 flex flex-wrap items-center justify-center gap-3">
               <a
-                href="#projects"
+                href="#stages"
                 className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white transition-all duration-200 shadow-xs hover:shadow-sm active:scale-95 cursor-pointer"
               >
-                <span>프로그램 둘러보기</span>
-                <span className="text-[var(--accent)]">↓</span>
+                <span>문화 무대 둘러보기</span>
+                <span>↓</span>
               </a>
-              <InquiryTriggerButton
-                variant="secondary"
-                category="독서 앙상블 / 문화 프로그램 참여"
-                label="참여 신청하기"
-                className="!py-2.5 !px-5 !rounded-full"
-              />
+              <a
+                href="#b2b-section"
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white transition-all duration-200 shadow-xs hover:shadow-sm active:scale-95 cursor-pointer"
+              >
+                <span>도서관·기업 출강 &amp; 제휴 안내</span>
+                <span>→</span>
+              </a>
             </div>
           </div>
         </section>
 
         {/* ========================================================= */}
-        {/* 1. ABOUT : 일상의 재미를 만들고 나누는 공간 */}
+        {/* 1. JI.Stage의 3가지 무대 (히어로 직하단 핵심 위치) */}
         {/* ========================================================= */}
-        <section id="about" className="py-20 sm:py-28 border-t border-[var(--border-subtle)] bg-[var(--bg-main)]">
+        <section id="stages" className="py-20 sm:py-24 border-t border-[var(--border-subtle)] bg-[var(--bg-main)]">
           <div className="max-w-6xl mx-auto px-5 sm:px-8">
-            {/* 헤더 */}
-            <div className="max-w-2xl mx-auto text-center space-y-4 mb-16">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-white text-[var(--primary)] border border-[var(--border-subtle)] shadow-2xs">
-                <span className="text-[var(--accent)] font-bold">✦</span>
-                <span className="tracking-[0.16em] uppercase font-serif-luxury font-bold">About Jiae &amp; JI.Stage</span>
-              </div>
-              <h2 className="font-serif-luxury text-3xl sm:text-4xl font-bold text-[var(--text-main)] tracking-tight">
-                일상의 재미를 만들고 나누는 공간
+            <div className="max-w-3xl mx-auto text-center space-y-4 mb-14">
+              <h2 className="font-serif-luxury text-3xl sm:text-4xl font-bold text-[var(--text-main)] tracking-tight leading-snug">
+                프라이빗 아지트에서 시작해,
+                <br className="hidden sm:inline" /> 온라인과 세상으로 이어지는 문화 무대
               </h2>
               <p className="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed">
-                내 손끝에서 만들어지는 아름다운 소리,
-                발레 바(Barre) 앞에서 곧게 세운 척추와 셔플댄스의 경쾌한 스텝,
-                그리고 마음을 건네는 책 한 구절이 모여 우리의 하루를 다정하게 채웁니다.
+                아늑한 아지트의 밀도 높은 오프라인 경험에서 출발해, 공간의 제약을 넘는 온라인 클래스, 그리고 도서관·기업·서점을 직접 찾아가는 맞춤형 문화 출강까지 확장합니다.
               </p>
             </div>
 
-            {/* 3가지 정체성 카드 (선명한 화이트 카드 & 진한 텍스트 대비) */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-              <div className="p-8 rounded-3xl bg-white border border-[var(--border-subtle)] space-y-4 hover:border-[var(--accent)] hover:shadow-xl transition-all shadow-sm">
-                <div className="w-12 h-12 rounded-2xl bg-[var(--primary-light)] border border-[var(--primary-border)] flex items-center justify-center text-xl shadow-2xs">🎸</div>
-                <div className="space-y-1">
-                  <span className="text-xs font-extrabold text-[var(--accent)] tracking-[0.14em] uppercase font-serif-luxury">Music &amp; Acoustic · 음악</span>
-                  <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">기타 연주 &amp; 공연 기획</h3>
+            {/* 3단 핵심 무대 카드 */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* 카드 1: 오프라인 아지트 살롱 */}
+              <div className="p-6 sm:p-7 rounded-3xl bg-white border border-[var(--border-subtle)] flex flex-col justify-between space-y-5 hover:border-[var(--primary)] hover:shadow-xl transition-all shadow-sm">
+                <div className="space-y-5">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/activity_learn.jpg"
+                    alt="오프라인 아지트 살롱"
+                    className="w-full aspect-[5/4] object-cover rounded-2xl border border-[var(--border-subtle)]/50"
+                  />
+                  <div className="space-y-1.5">
+                    <span className="block text-xs font-extrabold text-[var(--primary)] tracking-wider uppercase">
+                      Stage 01 · Offline Atelier
+                    </span>
+                    <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">
+                      오프라인 아지트 살롱
+                    </h3>
+                  </div>
+                  <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
+                    아늑한 공간에서 4~6인이 연결되는 시간
+                  </p>
                 </div>
-                <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
-                  클래식, 어쿠스틱, 핑거스타일 기타를 배우고 연습합니다. 연습하는 과정을 지나 무대 위의 공연을 기획합니다.
-                </p>
-                <div className="pt-2 text-xs font-bold text-[var(--accent)]">#기타 #앙상블합주 #리듬반주 #발표무대 #공연</div>
+                <div className="pt-2 border-t border-[var(--border-subtle)]/60">
+                  <a
+                    href="#schedule"
+                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[var(--primary)] hover:text-[var(--primary-hover)] transition-colors"
+                  >
+                    <span>모임 일정 보기</span>
+                    <span>→</span>
+                  </a>
+                </div>
               </div>
 
-              <div className="p-8 rounded-3xl bg-white border border-[var(--border-subtle)] space-y-4 hover:border-[var(--accent)] hover:shadow-xl transition-all shadow-sm">
-                <div className="w-12 h-12 rounded-2xl bg-[var(--accent-light)] border border-[var(--accent-border)] flex items-center justify-center text-xl shadow-2xs">🩰</div>
-                <div className="space-y-1">
-                  <span className="text-xs font-extrabold text-[var(--accent)] tracking-[0.14em] uppercase font-serif-luxury">Movement Record · 신체</span>
-                  <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">발레와 댄스, 몸의 기록</h3>
+              {/* 카드 2: 온라인 클래스 & 북클럽 */}
+              <div className="p-6 sm:p-7 rounded-3xl bg-white border border-[var(--border-subtle)] flex flex-col justify-between space-y-5 hover:border-[var(--primary)] hover:shadow-xl transition-all shadow-sm">
+                <div className="space-y-5">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/activity_share.jpg"
+                    alt="온라인 클래스 & 북클럽"
+                    className="w-full aspect-[5/4] object-cover rounded-2xl border border-[var(--border-subtle)]/50"
+                  />
+                  <div className="space-y-1.5">
+                    <span className="block text-xs font-extrabold text-[var(--primary)] tracking-wider uppercase">
+                      Stage 02 · Online Class
+                    </span>
+                    <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">
+                      온라인 클래스 &amp; 북클럽
+                    </h3>
+                  </div>
+                  <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
+                    공간의 한계를 넘어 전국 어디서나 함께하는 온라인 독서 모임, 북 마케터 특강 및 자격증 과정
+                  </p>
                 </div>
-                <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
-                  스트레칭을 하며 내 몸을 최대한 써보는 시간, 발레 바 위에서 몸을 곧게 새우는 시간고 그리고, 신나는 비트에 발을 맞추는 스텝. 음악을 온몸으로 느끼는 감각을 기록합니다.
-                </p>
-                <div className="pt-2 text-xs font-bold text-[var(--accent)]">#발레바 #발레스트레칭 #바레 #셔플댄스 #몸의감각</div>
+                <div className="pt-2 border-t border-[var(--border-subtle)]/60">
+                  <a
+                    href="#projects"
+                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[var(--primary)] hover:text-[var(--primary-hover)] transition-colors"
+                  >
+                    <span>온라인 프로그램 보기</span>
+                    <span>→</span>
+                  </a>
+                </div>
               </div>
 
-              <div className="p-8 rounded-3xl bg-white border border-[var(--border-subtle)] space-y-4 hover:border-[var(--accent)] hover:shadow-xl transition-all shadow-sm">
-                <div className="w-12 h-12 rounded-2xl bg-[var(--primary-light)] border border-[var(--primary-border)] flex items-center justify-center text-xl shadow-2xs">📖</div>
-                <div className="space-y-1">
-                  <span className="text-xs font-extrabold text-[var(--accent)] tracking-[0.14em] uppercase font-serif-luxury">Culture Salon · 연결</span>
-                  <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">글과 음악을 잇는 우리</h3>
+              {/* 카드 3: 도서관 · 기업 · 공간 출강 */}
+              <div className="p-6 sm:p-7 rounded-3xl bg-white border-2 border-[var(--accent)]/70 flex flex-col justify-between space-y-5 hover:border-[var(--accent)] hover:shadow-xl transition-all shadow-md">
+                <div className="space-y-5">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/activity_express.jpg"
+                    alt="도서관 · 기업 · 공간 출강"
+                    className="w-full aspect-[5/4] object-cover rounded-2xl border border-[var(--border-subtle)]/50"
+                  />
+                  <div className="space-y-1.5">
+                    <span className="block text-xs font-extrabold text-[var(--accent)] tracking-wider uppercase">
+                      Stage 03 · B2B &amp; Space
+                    </span>
+                    <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">
+                      도서관 · 기업 · 공간 출강
+                    </h3>
+                  </div>
+                  <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
+                    검증된 독서 지도자, 북 큐레이터, 연주자, 발레·댄스 강사진이 귀사의 공간으로 직접 찾아가는 맞춤형 문화 기획
+                  </p>
                 </div>
-                <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
-                  읽고, 쓰고, 연주하며 서로의 이야기를 나누는 &apos;이야기 앙상블&apos; 처럼  공간과 사람이 다정하게 연결되는 프로그램을 만듭니다.
-                </p>
-                <div className="pt-2 text-xs font-bold text-[var(--accent)]">#독서앙상블 #이야기앙상블 #책과사람 #시낭송</div>
-              </div>
-            </div>
-
-            {/* 지애 소개 스토리 */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16 items-center">
-              <div className="space-y-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[var(--accent-light)] text-[var(--accent)] border border-[var(--accent-border)]">
-                  <span className="tracking-[0.16em] uppercase font-serif-luxury">Story of Jiae</span>
+                <div className="pt-2">
+                  <a
+                    href="#b2b-section"
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white transition-all shadow-xs"
+                  >
+                    <span>출강·제휴 제안 보기</span>
+                    <span>↓</span>
+                  </a>
                 </div>
-                <h3 className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[var(--text-main)]">
-                  음악과 움직임, <br />이야기를 나누는 공간
-                </h3>
-                <p className="text-sm text-[var(--text-muted)] leading-loose">
-                  JI.Stage는 기타 레슨, 발레 스트레칭·댄스 동아리, 독서 모임을 운영하는 공간입니다
-                </p>
-                <p className="text-sm text-[var(--text-muted)] leading-loose">
-                  악기를 배우고 즐길 수 있게 돕습니다. 성인이 되어 시작한 발레가 좋아서 함께하고 싶어하고, 좋은 책을 읽고 생각을 듣는 시간도 틈틈히 연결합니다.
-                </p>
-                <p className="text-sm text-[var(--text-muted)] leading-loose">
-                  혼자서도, 함께해도 좋은 시간을 만들어 갑니다.
-                </p>
-              </div>
-              <div className="p-5 sm:p-7 rounded-3xl bg-white border border-[var(--border-subtle)] shadow-2xs">
-                <div className="grid grid-cols-3 gap-3 sm:gap-5">
-                  {[
-                    { img: "/activity_learn.jpg", title: "배움", desc: "음악 배우며 성장하기" },
-                    { img: "/activity_express.jpg", title: "표현", desc: "몸과 음악으로 나를 표현하기" },
-                    { img: "/activity_share.jpg", title: "나눔", desc: "글과 음악으로 서로 연결되기" },
-                  ].map((item) => (
-                    <div key={item.title} className="space-y-3">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={item.img}
-                        alt={item.title}
-                        className="w-full aspect-[5/4] object-cover rounded-2xl"
-                      />
-                      <div className="space-y-1">
-                        <p className="text-base sm:text-lg font-bold text-[var(--text-main)]">{item.title}</p>
-                        <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* 가치관 / 철학 : 묵직하고 믿음직한 딥블루 솔리드 섹션 (약간 진한색 사용) */}
-            <div className="rounded-3xl bg-[var(--primary)] text-white border border-[var(--primary-dark)] p-8 sm:p-14 mb-16 shadow-xl relative overflow-hidden">
-              <div className="max-w-3xl mx-auto text-center space-y-6 relative z-10">
-                <span className="text-[var(--accent-vibrant)] font-serif-luxury text-3xl">✦</span>
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-snug">
-                  &ldquo;좋은 음악 한 곡, 따뜻한 문장 하나.<br />그것만으로 하루가 조금 나아질 때가 있습니다&rdquo;
-                </h3>
-                <p className="text-sm sm:text-base text-white/90 leading-loose max-w-xl mx-auto">
-                  서툴지만 조금씩 연습해서 만들어가는 연주, 몸을 깨우는 스트레칭, 책속 한 줄에 고개를 끄덕이는 순간. JI.Stage는 그런 시간을 함께 하고 싶습니다.
-                </p>
               </div>
             </div>
           </div>
         </section>
 
         {/* ========================================================= */}
-        {/* 2. CULTURE & PROJECTS : 독서 앙상블 + 무브먼트 + 모임 신청 */}
+        {/* 2. 개인 프로그램 안내 (오프라인 아지트 & 온라인 클래스) */}
         {/* ========================================================= */}
-        <section id="projects" className="py-20 sm:py-28 border-t border-[var(--border-subtle)] bg-[var(--bg-main)]">
+        <section id="projects" className="py-20 sm:py-24 border-t border-[var(--border-subtle)] bg-white">
           <div className="max-w-6xl mx-auto px-5 sm:px-8">
-            {/* 헤더 */}
             <div className="max-w-2xl mb-14 space-y-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[var(--primary-light)] text-[var(--primary)] border border-[var(--primary-border)]">
-                <span className="text-[var(--accent)]">✦</span>
-                <span className="tracking-[0.16em] uppercase font-serif-luxury">Culture &amp; Projects</span>
-              </div>
               <h2 className="font-serif-luxury text-3xl sm:text-4xl font-bold text-[var(--text-main)] tracking-tight">
-                문화 기획 &amp; 독서 앙상블
+                살롱 &amp; 온라인 클래스 프로그램
               </h2>
               <p className="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed">
-                책과 음악, 몸과 공간이 자연스럽게 이어질 때 일상은 훨씬 풍요로워집니다.
-                살롱 모임과 워크숍을 통해 감각이 살아나는 다정한 경험을 만듭니다.
+                아지트에서 소수로 마주 앉는 오프라인 살롱부터, 전국 어디서나 참여할 수 있는 온라인 북클럽·리더 과정까지 취향에 맞게 선택해 보세요.
               </p>
             </div>
 
-            {/* 3대 프로젝트 카드 */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
-              {/* 독서 앙상블 */}
-              <div className="p-8 rounded-3xl bg-white border border-[var(--border-subtle)] flex flex-col justify-between hover:border-[var(--accent)]/60 hover:shadow-md transition-all">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {/* 프로그램 1: 오프라인 아지트 독서 앙상블 */}
+              <div className="p-8 rounded-3xl bg-[var(--bg-main)]/45 border border-[var(--border-subtle)] flex flex-col justify-between hover:border-[var(--primary)] hover:shadow-md transition-all">
                 <div className="space-y-4">
                   <span className="text-2xl">📖🎶</span>
                   <div className="space-y-1">
-                    <span className="text-xs font-bold text-[var(--accent)] tracking-[0.12em] uppercase font-serif-luxury">Signature Salon</span>
-                    <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">독서 앙상블 (Reading Ensemble)</h3>
+                    <span className="text-xs font-bold text-[var(--primary)] tracking-wider">
+                      [오프라인 아지트] 4~6인 소수 정예
+                    </span>
+                    <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">
+                      독서 앙상블 (Reading Ensemble)
+                    </h3>
                   </div>
                   <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
-                    한 권의 책을 읽고 마음에 남은 문장을 나눕니다. 문장의 쉼표마다 어쿠스틱 기타의 라이브 연주가 더해져, 활자가 음악으로 스며드는 특별한 북 살롱입니다.
+                    아늑한 프라이빗 아지트에서 책을 읽고 마음에 남은 문장을 나눕니다. 문장의 쉼표마다 어쿠스틱 기타의 라이브 연주가 더해져 활자가 음악으로 스며드는 살롱입니다.
                   </p>
-                  <div className="p-3.5 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-subtle)] text-xs text-[var(--text-muted)] space-y-1">
-                    <p>• <strong>일정:</strong> 월 1~2회 정기 모임 (소규모 6~8인)</p>
-                    <p>• <strong>장소:</strong> JI.Stage 아틀리에 &amp; 연계 문화 공간</p>
-                    <p>• <strong>진행:</strong> 문장 낭독 → 나눔 → 기타 연주</p>
-                    <p>• <strong>참가비:</strong> 1만원 내외 (음료 포함)</p>
-                  </div>
-                  <div className="space-y-2 pt-2">
-                    <p className="text-[11px] font-bold text-[var(--accent)] uppercase tracking-wider font-serif-luxury">최근 읽은 책들</p>
-                    {["『채식주의자』— 한강", "『달러구트 꿈 백화점』— 이미예", "『아몬드』— 손원평"].map((book) => (
-                      <p key={book} className="text-[11px] text-[var(--text-muted)]">📚 {book}</p>
-                    ))}
+                  <div className="p-3.5 rounded-2xl bg-white border border-[var(--border-subtle)] text-xs text-[var(--text-muted)] space-y-1">
+                    <p>• <strong>정원:</strong> 4~6인 소수 정예</p>
+                    <p>• <strong>진행:</strong> 문장 낭독 → 깊은 대화 → 기타 라이브</p>
+                    <p>• <strong>포함:</strong> 큐레이션 티 &amp; 다과 제공</p>
                   </div>
                 </div>
-                <div className="pt-6">
+                <div className="pt-6 space-y-4">
+                  <div className="p-3.5 rounded-2xl bg-white border border-[var(--primary-border)] text-xs text-[var(--text-main)] space-y-1.5">
+                    <p className="flex items-start gap-2">
+                      <span className="shrink-0">🗓️</span>
+                      <span><strong>진행 요일·시간:</strong> 매주 수요일 저녁 7:30 / 토요일 오후 4:00</span>
+                    </p>
+                    <p className="flex items-start gap-2">
+                      <span className="shrink-0">💳</span>
+                      <span><strong>참가비:</strong> 월 4회 100,000원 / 1회 30,000원</span>
+                    </p>
+                  </div>
                   <InquiryTriggerButton
                     variant="secondary"
                     category="독서 앙상블 / 문화 프로그램 참여"
@@ -265,133 +228,368 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* 무브먼트 & 댄스 살롱 */}
-              <div className="p-8 rounded-3xl bg-white border border-[var(--border-subtle)] flex flex-col justify-between hover:border-[var(--accent)]/60 hover:shadow-md transition-all">
+              {/* 프로그램 2: 온라인 북클럽 & 독서 리더 과정 */}
+              <div className="p-8 rounded-3xl bg-[var(--bg-main)]/45 border border-[var(--border-subtle)] flex flex-col justify-between hover:border-[var(--primary)] hover:shadow-md transition-all">
                 <div className="space-y-4">
-                  <span className="text-2xl">🩰💫</span>
+                  <span className="text-2xl">💻📚</span>
                   <div className="space-y-1">
-                    <span className="text-xs font-bold text-[var(--accent)] tracking-[0.12em] uppercase font-serif-luxury">Body &amp; Movement</span>
-                    <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">무브먼트 &amp; 댄스 살롱</h3>
+                    <span className="text-xs font-bold text-[var(--accent)] tracking-wider">
+                      [온라인 ZOOM] 전국 실시간 연결
+                    </span>
+                    <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">
+                      온라인 북클럽 &amp; 독서 리더 과정
+                    </h3>
                   </div>
                   <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
-                    발레 바(Barre) 스트레칭으로 굳어있던 척추와 호흡을 정돈하고, 음악 비트에 맞춰 신나는 셔플댄스 기본기를 배우며 온몸의 리듬감을 깨웁니다.
+                    지역에 상관없이 온라인으로 만나는 깊이 있는 독서 토론, 출판·북 마케터의 모임 브랜딩 특강, 그리고 성인 독서지도사 자격 과정까지 체계적으로 운영합니다.
                   </p>
-                  <div className="p-3.5 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-subtle)] text-xs text-[var(--text-muted)] space-y-1">
-                    <p>• <strong>대상:</strong> 몸을 부드럽게 쓰고 리듬을 타고 싶은 누구나</p>
-                    <p>• <strong>내용:</strong> 발레 스트레칭 + 셔플 스텝 + 자유 무브먼트</p>
-                    <p>• <strong>특징:</strong> 부담 없이 즐기는 원데이 클래스</p>
-                    <p>• <strong>복장:</strong> 편한 옷차림이면 OK</p>
-                  </div>
-                  <div className="space-y-2 pt-2">
-                    <p className="text-[11px] font-bold text-[var(--accent)] uppercase tracking-wider font-serif-luxury">클래스 구성</p>
-                    {[
-                      "워밍업 & 발레 바 스트레칭 (20분)",
-                      "셔플댄스 기본 스텝 (30분)",
-                      "음악에 맞춘 자유 무브먼트 (10분)",
-                    ].map((c) => (
-                      <p key={c} className="text-[11px] text-[var(--text-muted)]">🩰 {c}</p>
-                    ))}
+                  <div className="p-3.5 rounded-2xl bg-white border border-[var(--border-subtle)] text-xs text-[var(--text-muted)] space-y-1">
+                    <p>• <strong>방식:</strong> 실시간 ZOOM 화상 클래스</p>
+                    <p>• <strong>내용:</strong> 주제 도서 토론 + 북 마케터 특강</p>
+                    <p>• <strong>과정:</strong> 독서 모임 리더 · 자격증 대비반</p>
                   </div>
                 </div>
-                <div className="pt-6">
+                <div className="pt-6 space-y-4">
+                  <div className="p-3.5 rounded-2xl bg-white border border-[var(--primary-border)] text-xs text-[var(--text-main)] space-y-1.5">
+                    <p className="flex items-start gap-2">
+                      <span className="shrink-0">🗓️</span>
+                      <span><strong>진행 요일·시간:</strong> 매주 목요일 저녁 8:30 / 일요일 저녁 8:00</span>
+                    </p>
+                    <p className="flex items-start gap-2">
+                      <span className="shrink-0">💳</span>
+                      <span><strong>참가비:</strong> 월 4회 100,000원 / 1회 30,000원</span>
+                    </p>
+                  </div>
                   <InquiryTriggerButton
                     variant="secondary"
                     category="독서 앙상블 / 문화 프로그램 참여"
-                    label="무브먼트 살롱 문의"
+                    label="온라인 클래스 신청"
                     className="w-full justify-center"
                   />
                 </div>
               </div>
 
-              {/* 살롱 콘서트 & 공간 협업 */}
-              <div className="p-8 rounded-3xl bg-white border border-[var(--border-subtle)] flex flex-col justify-between hover:border-[var(--accent)]/60 hover:shadow-md transition-all">
+              {/* 프로그램 3: 기타·우쿨렐레 & 무브먼트 살롱 */}
+              <div className="p-8 rounded-3xl bg-[var(--bg-main)]/45 border border-[var(--border-subtle)] flex flex-col justify-between hover:border-[var(--primary)] hover:shadow-md transition-all">
                 <div className="space-y-4">
-                  <span className="text-2xl">☕🎪</span>
+                  <span className="text-2xl">🎸🩰</span>
                   <div className="space-y-1">
-                    <span className="text-xs font-bold text-[var(--accent)] tracking-[0.12em] uppercase font-serif-luxury">Collaboration</span>
-                    <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">살롱 콘서트 &amp; 공간 협업</h3>
+                    <span className="text-xs font-bold text-[var(--primary)] tracking-wider">
+                      [오프라인 아지트] 음악 &amp; 무브먼트
+                    </span>
+                    <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">
+                      우쿨렐레 · 포크 &amp; 무브먼트 살롱
+                    </h3>
                   </div>
                   <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
-                    아틀리에 공간을 기반으로 타 아티스트와의 콜라보 연주회, 소규모 강연, 공간 대관 및 복합 문화 기획을 함께 열어갑니다. 언제든 협업을 제안해주세요.
+                    어쿠스틱 기타·우쿨렐레로 좋아하는 곡을 연주하는 소규모 포크 살롱과, 발레 바(Barre) 스트레칭·셔플댄스로 몸의 감각을 깨우는 움직임 클래스를 운영합니다.
                   </p>
-                  <div className="p-3.5 rounded-2xl bg-[var(--bg-main)] border border-[var(--border-subtle)] text-xs text-[var(--text-muted)] space-y-1">
-                    <p>• <strong>형태:</strong> 하우스 콘서트, 아티스트 워크숍</p>
-                    <p>• <strong>분야:</strong> 음악, 도서, 댄스, 라이프스타일</p>
-                    <p>• <strong>수용 인원:</strong> 최대 20인</p>
-                    <p>• <strong>문의:</strong> 공간 대관 및 협업 제안</p>
-                  </div>
-                  <div className="space-y-2 pt-2">
-                    <p className="text-[11px] font-bold text-[var(--accent)] uppercase tracking-wider font-serif-luxury">협업 사례</p>
-                    {[
-                      "🎸 어쿠스틱 기타 × 첼로 2인 하우스 콘서트",
-                      "📚 출판사 작가와의 북 토크 + 라이브",
-                      "🌿 요가 & 명상 × 기타 사운드배스",
-                    ].map((c) => (
-                      <p key={c} className="text-[11px] text-[var(--text-muted)]">{c}</p>
-                    ))}
+                  <div className="p-3.5 rounded-2xl bg-white border border-[var(--border-subtle)] text-xs text-[var(--text-muted)] space-y-1">
+                    <p>• <strong>대상:</strong> 입문자부터 경험자까지 누구나 환영</p>
+                    <p>• <strong>구성:</strong> 코드 반주·합주 / 발레 바·셔플댄스</p>
+                    <p>• <strong>지원:</strong> 연습용 기타·우쿨렐레 대여 가능</p>
                   </div>
                 </div>
-                <div className="pt-6">
+                <div className="pt-6 space-y-4">
+                  <div className="p-3.5 rounded-2xl bg-white border border-[var(--primary-border)] text-xs text-[var(--text-main)] space-y-1.5">
+                    <p className="flex items-start gap-2">
+                      <span className="shrink-0">🗓️</span>
+                      <span><strong>진행 요일·시간:</strong> 매주 화요일 저녁 7:30 / 토요일 오전 11:00</span>
+                    </p>
+                    <p className="flex items-start gap-2">
+                      <span className="shrink-0">💳</span>
+                      <span><strong>참가비:</strong> 월 4회 100,000원 / 1회 30,000원</span>
+                    </p>
+                  </div>
                   <InquiryTriggerButton
                     variant="secondary"
-                    category="프로젝트 협업 및 대관 문의"
-                    label="협업 및 대관 문의"
+                    category="기타 레슨 / 스튜디오 문의"
+                    label="살롱 클래스 문의"
                     className="w-full justify-center"
                   />
                 </div>
-              </div>
-            </div>
-
-            {/* 다가오는 일정 */}
-            <div className="rounded-3xl bg-white border border-[var(--border-subtle)] p-8 sm:p-10 mb-12">
-              <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)] mb-6">다가오는 프로그램 일정</h3>
-              <div className="space-y-4">
-                {[
-                  { badge: "독서 앙상블", date: "11월 셋째 주 토요일", title: "『채식주의자』 — 한강 작가 특집", desc: "노벨문학상 수상 기념 특별판. 소설 속 음악적 장면을 기타 라이브로 재현합니다.", color: "text-[var(--primary)]", bg: "bg-[var(--primary-light)]", border: "border-[var(--primary-border)]" },
-                  { badge: "무브먼트", date: "12월 첫째 주 일요일", title: "겨울 발레 바 & 셔플 원데이 클래스", desc: "연말을 앞두고 굳어진 몸을 풀고 리듬을 되찾는 특별 원데이 클래스.", color: "text-[var(--accent)]", bg: "bg-[var(--accent-light)]", border: "border-[var(--accent-border)]" },
-                  { badge: "살롱 콘서트", date: "12월 넷째 주", title: "JI.Stage 겨울 하우스 콘서트", desc: "다정한 사람들과 함께하는 연말 살롱 콘서트. 어쿠스틱 선율과 소소한 크리스마스 무드.", color: "text-[var(--primary)]", bg: "bg-[var(--primary-light)]", border: "border-[var(--primary-border)]" },
-                ].map((item, i) => (
-                  <div key={i} className={`flex flex-col sm:flex-row items-start gap-4 p-5 rounded-2xl ${item.bg} border ${item.border}`}>
-                    <div className="shrink-0">
-                      <span className={`text-[11px] font-bold uppercase tracking-wider font-serif-luxury ${item.color}`}>{item.badge}</span>
-                      <p className="text-[11px] text-[var(--text-muted)] mt-0.5">{item.date}</p>
-                    </div>
-                    <div className="flex-1">
-                      <p className="font-serif-luxury text-sm font-bold text-[var(--text-main)]">{item.title}</p>
-                      <p className="text-[11px] text-[var(--text-muted)] leading-snug mt-1">{item.desc}</p>
-                    </div>
-                    <InquiryTriggerButton
-                      variant="secondary"
-                      category="독서 앙상블 / 문화 프로그램 참여"
-                      label="신청"
-                      className="shrink-0"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* CTA 배너 : 짙은 딥블루 솔리드 + 선명한 크림슨 버튼 포인트 */}
-            <div className="text-center p-8 sm:p-12 rounded-3xl bg-[var(--primary)] text-white border border-[var(--primary-dark)] shadow-xl space-y-4">
-              <span className="text-[var(--accent-vibrant)] text-2xl font-serif-luxury">✦</span>
-              <h3 className="font-serif-luxury text-xl sm:text-2xl font-bold text-white">새로운 문화 모임과 협업에 참여하고 싶으신가요?</h3>
-              <p className="text-xs sm:text-sm text-white/90 max-w-lg mx-auto leading-relaxed">
-                독서 앙상블 참여 신청, 워크숍 일정 안내 요청, 혹은 함께 만들고 싶은 프로그램 아이디어가 있다면 언제든 자유롭게 메시지를 보내주세요.
-              </p>
-              <div className="pt-2">
-                <InquiryTriggerButton
-                  variant="cta"
-                  category="독서 앙상블 / 문화 프로그램 참여"
-                  label="문화 프로그램 참여 신청하기"
-                  className="!bg-[var(--accent-vibrant)] hover:!bg-[var(--accent)] text-white shadow-lg"
-                />
               </div>
             </div>
           </div>
         </section>
 
         {/* ========================================================= */}
-        {/* 3. ARCHIVE : 유튜브 & 네이버 블로그 아카이브 */}
+        {/* 3. 도서관 · 기업 · 공간 출강 & 제휴 전용 섹션 (중단 핵심 위치) */}
+        {/* ========================================================= */}
+        <section
+          id="b2b-section"
+          className="scroll-mt-20 py-20 sm:py-28 border-t border-[var(--primary-dark)] bg-[var(--primary-dark)] text-white"
+        >
+          <div className="max-w-6xl mx-auto px-5 sm:px-8 space-y-14">
+            {/* B2B 헤더 */}
+            <div className="max-w-3xl space-y-4">
+              <span className="inline-block text-xs font-bold tracking-[0.16em] uppercase text-[var(--secondary)]">
+                B2B &amp; Space Partnership
+              </span>
+              <h2 className="font-serif-luxury text-3xl sm:text-4xl lg:text-[42px] font-bold text-white leading-snug tracking-tight">
+                도서관 · 기업 · 서점 맞춤형
+                <br className="hidden sm:inline" /> 문화 프로그램 기획 및 출강
+              </h2>
+              <p className="text-sm sm:text-base text-white/90 leading-relaxed max-w-2xl">
+                전문 강사진 섭외부터 커리큘럼 기획까지, 공간과 대상에 딱 맞는 독보적인 살롱 프로그램을 턴키로 제안합니다.
+              </p>
+            </div>
+
+            {/* 4가지 대표 패키지 카드 (2x2 그리드) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                {
+                  num: "PACKAGE 01",
+                  icon: "📖🎸",
+                  title: "북 콘서트 & 어쿠스틱 살롱",
+                  target: "도서관 · 문화공간 특화",
+                  desc: "북 큐레이터의 책 해설과 기타 라이브 연주가 어우러진 도서관·문화공간 특화 프로그램",
+                },
+                {
+                  num: "PACKAGE 02",
+                  icon: "🩰🌿",
+                  title: "책과 움직임의 테라피",
+                  target: "기업 · 기관 힐링 워크숍",
+                  desc: "독서 대화로 마음을 열고, 이완 발레·스트레칭으로 몸을 푸는 기업·기관 힐링 워크숍",
+                },
+                {
+                  num: "PACKAGE 03",
+                  icon: "🎶🧘",
+                  title: "음악과 움직임 : 연주 감상과 스트레칭",
+                  target: "오감 리프레시 클래스",
+                  desc: "라이브 어쿠스틱 연주를 감상하며 호흡과 스트레칭으로 굳은 몸을 이완하는 오감 리프레시 클래스",
+                },
+                {
+                  num: "PACKAGE 04",
+                  icon: "🤝🎯",
+                  title: "기업 복지 · 기관 동아리 정기 레슨",
+                  target: "다회차(10~20회) 맞춤형 정기 출강",
+                  desc: "기업 사내 동아리, 문화재단 생활예술 지원사업, 복지관 등을 위한 기타·발레·댄스·독서 다회차(10~20회) 맞춤형 정기 출강",
+                },
+              ].map((pkg) => (
+                <div
+                  key={pkg.title}
+                  className="p-7 sm:p-8 rounded-3xl bg-white/10 border border-white/20 backdrop-blur-xs space-y-4 hover:bg-white/15 hover:border-white/35 transition-all"
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="text-xs font-bold tracking-widest text-[var(--secondary)]">
+                      {pkg.num}
+                    </span>
+                    <span className="text-2xl">{pkg.icon}</span>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-xs font-semibold text-white/80">
+                      {pkg.target}
+                    </p>
+                    <h3 className="font-serif-luxury text-xl sm:text-2xl font-bold text-white">
+                      {pkg.title}
+                    </h3>
+                  </div>
+                  <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
+                    {pkg.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* 섹션 하단: 출강 · 제휴 빠른 문의 폼 */}
+            <B2BInquiryForm />
+          </div>
+        </section>
+
+        {/* ========================================================= */}
+        {/* 4. 호스트 소개 & 아지트 위치 + 다가오는 프로그램 일정표 */}
+        {/* ========================================================= */}
+        <section id="host" className="py-20 sm:py-24 border-t border-[var(--border-subtle)] bg-[var(--bg-main)]">
+          <div className="max-w-6xl mx-auto px-5 sm:px-8 space-y-16">
+            {/* 호스트 소개 & 아지트 위치 */}
+            <div>
+              <div className="max-w-2xl mb-10 space-y-3">
+                <h2 className="font-serif-luxury text-3xl sm:text-4xl font-bold text-[var(--text-main)] tracking-tight">
+                  호스트 소개 &amp; 아지트 안내
+                </h2>
+                <p className="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed">
+                  프라이빗 아지트에서 피어난 문화의 온기를 온라인과 세상으로 연결하는 JI.Stage 호스트와 공간을 소개합니다.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                {/* 좌측: 호스트 소개 */}
+                <div className="p-8 rounded-3xl bg-white border border-[var(--border-subtle)] flex flex-col justify-between space-y-6 shadow-xs">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+                    <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-2 border-[var(--border-subtle)] shadow-sm shrink-0 bg-[var(--bg-subtle)]">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src="/activity_learn.jpg"
+                        alt="JI.Stage 호스트 JI 프로필"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <span className="text-xs font-bold text-[var(--accent)] tracking-wider uppercase">
+                        Host &amp; Cultural Planner
+                      </span>
+                      <h3 className="font-serif-luxury text-2xl font-bold text-[var(--text-main)]">
+                        호스트 JI
+                      </h3>
+                      <p className="text-xs sm:text-sm font-medium text-[var(--primary)]">
+                        기타리스트 · 무브먼트 가이드 · 문화 기획 스튜디오 운영
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <p className="font-serif-luxury text-base sm:text-lg font-bold text-[var(--text-main)] leading-relaxed">
+                      &ldquo;각자의 자리에서 빛나는 좋은 예술가·전문가들과 함께, 바쁜 일상 속 당신이 자기만의 리듬과 감각을 되찾는 무대를 만듭니다. 아지트 소모임부터 온라인 클래스, 기업·기관 출강까지 진심을 담아 기획합니다.&rdquo;
+                    </p>
+                    <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-loose">
+                      기타 연주와 레슨, 성인 발레와 움직임, 그리고 책과 사람이 만나는 독서 앙상블을 꾸준히 기획해 왔습니다.
+                      이제는 각 분야의 검증된 독서 지도자·북 큐레이터·연주자·댄스 강사진과 함께 아지트 살롱은 물론
+                      온라인 클래스와 도서관·기업·서점 출강을 통해 더 많은 일상에 다정한 예술을 전하고 있습니다.
+                    </p>
+                  </div>
+                </div>
+
+                {/* 우측: 프라이빗 아지트 위치 & 이용 안내 */}
+                <div className="p-8 rounded-3xl bg-white border border-[var(--border-subtle)] flex flex-col justify-between space-y-6 shadow-xs">
+                  <div className="space-y-1">
+                    <span className="text-xs font-bold text-[var(--primary)] tracking-wider uppercase">
+                      Private Atelier &amp; Location
+                    </span>
+                    <h3 className="font-serif-luxury text-2xl font-bold text-[var(--text-main)]">
+                      아지트 위치 및 이용 안내
+                    </h3>
+                  </div>
+
+                  <div className="space-y-3.5 text-xs sm:text-sm text-[var(--text-muted)]">
+                    <div className="p-4 rounded-2xl bg-[var(--bg-main)]/55 border border-[var(--border-subtle)] space-y-1">
+                      <p className="font-bold text-[var(--text-main)]">📍 아지트 위치</p>
+                      <p className="leading-relaxed">
+                        경기도 광명시 도덕로 56 (지하철 7호선 광명사거리역 인근)
+                      </p>
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-[var(--bg-main)]/55 border border-[var(--border-subtle)] space-y-1">
+                      <p className="font-bold text-[var(--text-main)]">🏡 공간 규모 및 운영 방식</p>
+                      <p className="leading-relaxed">
+                        프라이빗 문화 아지트 · 4~6인 소수 정예 사전 예약제 운영
+                      </p>
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-[var(--bg-main)]/55 border border-[var(--border-subtle)] space-y-1">
+                      <p className="font-bold text-[var(--text-main)]">🕰️ 운영 시간</p>
+                      <p className="leading-relaxed">
+                        평일 11:00 – 21:00 / 주말 정기 살롱 및 출강·기획 미팅 운영
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 다가오는 프로그램 일정표 */}
+            <div id="schedule" className="scroll-mt-24 rounded-3xl bg-white border border-[var(--border-subtle)] p-6 sm:p-10 shadow-sm">
+              <div className="mb-6 space-y-1.5">
+                <h3 className="font-serif-luxury text-2xl font-bold text-[var(--text-main)]">
+                  다가오는 프로그램 일정
+                </h3>
+                <p className="text-xs sm:text-sm text-[var(--text-muted)]">
+                  오프라인 아지트 모임과 온라인 ZOOM 클래스 일정을 한눈에 확인하고 신청하실 수 있습니다.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  {
+                    mode: "[오프라인 아지트]",
+                    category: "독서 앙상블 · 4~6인 소수 정예",
+                    date: "11월 20일 (수)",
+                    time: "저녁 7:30 – 9:30",
+                    fee: "1회 30,000원 (월 4회 100,000원)",
+                    title: "『채식주의자』 — 한강 작가 특집 북살롱",
+                    desc: "노벨문학상 수상 기념 특별 큐레이션. 책의 여백에 어쿠스틱 기타 라이브 연주를 더합니다.",
+                    isOnline: false,
+                  },
+                  {
+                    mode: "[온라인 ZOOM]",
+                    category: "온라인 북클럽 & 북 마케터 특강",
+                    date: "11월 28일 (목)",
+                    time: "저녁 8:30 – 10:00",
+                    fee: "1회 30,000원 (월 4회 100,000원)",
+                    title: "내 취향의 독서 모임을 브랜드로 만드는 법",
+                    desc: "전국 어디서나 접속 가능한 실시간 온라인 ZOOM 세미나. 독서 리더·모임 운영 실전 노하우를 나눕니다.",
+                    isOnline: true,
+                  },
+                  {
+                    mode: "[오프라인 아지트]",
+                    category: "우쿨렐레 · 포크 & 무브먼트 살롱",
+                    date: "12월 7일 (토)",
+                    time: "오전 11:00 – 12:30",
+                    fee: "1회 30,000원 (월 4회 100,000원)",
+                    title: "겨울 발레 바 스트레칭 & 어쿠스틱 원데이",
+                    desc: "아늑한 아지트에서 몸의 긴장을 푸는 이완 발레 바 스트레칭과 따뜻한 어쿠스틱 리듬을 함께합니다.",
+                    isOnline: false,
+                  },
+                  {
+                    mode: "[오프라인 아지트]",
+                    category: "살롱 콘서트",
+                    date: "12월 27일 (금)",
+                    time: "저녁 7:30 – 9:30",
+                    fee: "1회 30,000원 (다과·음료 포함)",
+                    title: "JI.Stage 겨울 하우스 콘서트",
+                    desc: "한 해를 다정하게 마무리하는 소규모 살롱 콘서트. 어쿠스틱 기타와 이야기가 함께합니다.",
+                    isOnline: false,
+                  },
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className={`flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 sm:p-6 rounded-2xl border ${
+                      item.isOnline
+                        ? "bg-[var(--accent-light)]/45 border-[var(--accent-border)]"
+                        : "bg-[var(--primary-light)]/50 border-[var(--primary-border)]"
+                    }`}
+                  >
+                    <div className="flex-1 space-y-2">
+                      <div className="flex flex-wrap items-center gap-2 text-xs font-bold">
+                        <span
+                          className={
+                            item.isOnline
+                              ? "text-[var(--accent)]"
+                              : "text-[var(--primary)]"
+                          }
+                        >
+                          {item.mode}
+                        </span>
+                        <span className="text-[var(--text-subtle)]">·</span>
+                        <span className="text-[var(--text-muted)]">{item.category}</span>
+                      </div>
+                      <p className="font-serif-luxury text-base sm:text-lg font-bold text-[var(--text-main)]">
+                        {item.title}
+                      </p>
+                      <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
+                        {item.desc}
+                      </p>
+                      <div className="pt-1 flex flex-wrap items-center gap-x-5 gap-y-1 text-xs font-semibold text-[var(--text-main)]">
+                        <span>📅 {item.date}</span>
+                        <span>⏰ {item.time}</span>
+                        <span>💳 {item.fee}</span>
+                      </div>
+                    </div>
+                    <InquiryTriggerButton
+                      variant="secondary"
+                      category="독서 앙상블 / 문화 프로그램 참여"
+                      label="참여 신청"
+                      className="shrink-0 self-start sm:self-center"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ========================================================= */}
+        {/* 5. ARCHIVE : 유튜브 & 네이버 블로그 아카이브 */}
         {/* ========================================================= */}
         <ArchiveSection />
 
@@ -401,28 +599,30 @@ export default function Home() {
         <section className="py-20 sm:py-24 bg-gradient-to-b from-[var(--bg-main)] to-[var(--bg-subtle)] border-t border-[var(--border-subtle)]">
           <div className="max-w-4xl mx-auto px-5 sm:px-8 text-center space-y-6">
             <span className="text-[var(--accent)] text-2xl font-serif-luxury">✦</span>
-            <h2 className="font-serif-luxury text-2xl sm:text-4xl font-bold text-[var(--text-main)] tracking-tight">
-              당신의 일상에 음악과 움직임,
+            <h2 className="font-serif-luxury text-2xl sm:text-4xl font-bold text-[var(--text-main)] tracking-tight leading-snug">
+              아늑한 아지트에서, 그리고 당신의 공간에서
               <br />
-              다정한 이야기가 머물 수 있도록
+              다정한 문화의 순간을 함께 만듭니다
             </h2>
             <p className="text-sm sm:text-base text-[var(--text-muted)] max-w-xl mx-auto leading-relaxed">
-              몸의 감각을 깨우고 싶으실 때, 혹은 좋은 책과 선율을 함께 나누고 싶을 때 언제든 편안하게 문을 두드려주세요.
+              개인 살롱·온라인 클래스 참여부터 도서관·기업·서점 출강 및 공간 제휴까지 언제든 편하게 문을 두드려주세요.
             </p>
             <div className="pt-2 flex flex-wrap justify-center items-center gap-3">
               <InquiryTriggerButton
                 variant="cta"
                 category="독서 앙상블 / 문화 프로그램 참여"
-                label="문화 프로그램 참여 신청"
+                label="개인 프로그램 신청"
               />
-              <InquiryTriggerButton
-                variant="secondary"
-                category="프로젝트 협업 및 대관 문의"
-                label="프로젝트 협업 &amp; 대관 문의"
-              />
+              <a
+                href="#b2b-inquiry"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl font-bold text-xs sm:text-sm bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white transition-all shadow-md"
+              >
+                <span>출강 · 공간 제휴 문의하기</span>
+                <span>↑</span>
+              </a>
             </div>
             <div className="pt-8 flex flex-col items-center gap-3">
-              <span className="text-xs text-[var(--text-subtle)]">소셜 채널에서도 자주 만나요</span>
+              <span className="text-xs text-[var(--text-subtle)] font-medium">소셜 채널에서도 자주 만나요</span>
               <SocialLinks variant="banner" />
             </div>
           </div>
