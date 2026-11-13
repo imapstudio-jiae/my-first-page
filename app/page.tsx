@@ -121,9 +121,9 @@ export default function Home() {
                   <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">기타 연주 &amp; 공연 기획</h3>
                 </div>
                 <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
-                  클래식, 어쿠스틱, 핑거스타일 기타를 함께 나누고 가르칩니다. 혼자 연습하는 즐거움을 넘어 무대 위에서 소리를 모으는 정기 공연을 기획합니다.
+                  클래식, 어쿠스틱, 핑거스타일 기타를 배우고 연습합니다. 연습하는 과정을 지나 무대 위의 공연을 기획합니다.
                 </p>
-                <div className="pt-2 text-xs font-bold text-[var(--accent)]">#어쿠스틱 #앙상블합주 #하우스콘서트</div>
+                <div className="pt-2 text-xs font-bold text-[var(--accent)]">#기타 #앙상블합주 #리듬반주 #발표무대 #공연</div>
               </div>
 
               <div className="p-8 rounded-3xl bg-white border border-[var(--border-subtle)] space-y-4 hover:border-[var(--accent)] hover:shadow-xl transition-all shadow-sm">
@@ -133,21 +133,21 @@ export default function Home() {
                   <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">발레와 댄스, 몸의 기록</h3>
                 </div>
                 <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
-                  발레 바 위에서 고요하게 호흡을 세우는 정적인 시간, 그리고 신나는 비트에 발을 맞추는 셔플댄스의 리듬. 음악을 온몸으로 느끼는 감각을 기록합니다.
+                  스트레칭을 하며 내 몸을 최대한 써보는 시간, 발레 바 위에서 몸을 곧게 새우는 시간고 그리고, 신나는 비트에 발을 맞추는 스텝. 음악을 온몸으로 느끼는 감각을 기록합니다.
                 </p>
-                <div className="pt-2 text-xs font-bold text-[var(--accent)]">#성인발레 #셔플댄스 #몸의감각</div>
+                <div className="pt-2 text-xs font-bold text-[var(--accent)]">#발레바 #발레스트레칭 #바레 #셔플댄스 #몸의감각</div>
               </div>
 
               <div className="p-8 rounded-3xl bg-white border border-[var(--border-subtle)] space-y-4 hover:border-[var(--accent)] hover:shadow-xl transition-all shadow-sm">
                 <div className="w-12 h-12 rounded-2xl bg-[var(--primary-light)] border border-[var(--primary-border)] flex items-center justify-center text-xl shadow-2xs">📖</div>
                 <div className="space-y-1">
                   <span className="text-xs font-extrabold text-[var(--accent)] tracking-[0.14em] uppercase font-serif-luxury">Culture Salon · 연결</span>
-                  <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">책과 음악이 있는 문화 기획</h3>
+                  <h3 className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">글과 음악을 잇는 우리</h3>
                 </div>
                 <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
-                  책 속 문장에 어쿠스틱 선율을 얹는 &apos;독서 앙상블&apos;부터, 움직임 워크숍과 소규모 살롱 콘서트까지. 공간과 사람이 다정하게 연결되는 프로그램을 만듭니다.
+                  읽고, 쓰고, 연주하며 서로의 이야기를 나누는 &apos;이야기 앙상블&apos; 처럼  공간과 사람이 다정하게 연결되는 프로그램을 만듭니다.
                 </p>
-                <div className="pt-2 text-xs font-bold text-[var(--accent)]">#독서앙상블 #문화살롱 #공간협업</div>
+                <div className="pt-2 text-xs font-bold text-[var(--accent)]">#독서앙상블 #이야기앙상블 #책과사람 #시낭송</div>
               </div>
             </div>
 
@@ -158,31 +158,39 @@ export default function Home() {
                   <span className="tracking-[0.16em] uppercase font-serif-luxury">Story of Jiae</span>
                 </div>
                 <h3 className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[var(--text-main)]">
-                  음악과 몸, 그리고 이야기가<br />흐르는 삶을 삽니다
+                  음악과 움직임, <br />이야기를 나누는 공간
                 </h3>
                 <p className="text-sm text-[var(--text-muted)] leading-loose">
-                  어릴 때부터 소리에 이끌렸어요. 기타 한 대가 있으면 혼자서도, 둘이서도, 여럿이서도 온전한 세계를 만들 수 있다는 걸 배웠습니다.
+                  JI.Stage는 기타 레슨, 발레 스트레칭·댄스 동아리, 독서 모임을 운영하는 공간입니다
                 </p>
                 <p className="text-sm text-[var(--text-muted)] leading-loose">
-                  공간 안에서 음악을 나누고 사람들과 함께 무대를 준비하면서, 한편으론 발레 바 앞에서 내 몸의 감각을 기록하고, 좋은 책과 음악을 함께 나누는 살롱을 열어가고 있어요.
+                  악기를 배우고 즐길 수 있게 돕습니다. 성인이 되어 시작한 발레가 좋아서 함께하고 싶어하고, 좋은 책을 읽고 생각을 듣는 시간도 틈틈히 연결합니다.
                 </p>
                 <p className="text-sm text-[var(--text-muted)] leading-loose">
-                  예술이 삶의 한복판에 자연스럽게 흐르는 것— 그게 제가 만들고 싶은 일상이고, 이 공간이 담고 싶은 이야기입니다.
+                  혼자서도, 함께해도 좋은 시간을 만들어 갑니다.
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { emoji: "🎸", label: "기타 연주 & 강의", value: "[  ]년" },
-                  { emoji: "🎤", label: "공연 & 살롱 기획", value: "[  ]회" },
-                  { emoji: "🩰", label: "성인 발레 & 댄스", value: "[  ]년차" },
-                  { emoji: "📚", label: "독서 앙상블 살롱", value: "정기 운영" },
-                ].map((stat) => (
-                  <div key={stat.label} className="p-6 rounded-2xl bg-white border border-[var(--border-subtle)] text-center space-y-2 hover:border-[var(--accent)] hover:shadow-md transition-all shadow-2xs">
-                    <span className="text-2xl">{stat.emoji}</span>
-                    <p className="font-serif-luxury text-xl font-bold text-[var(--text-main)]">{stat.value}</p>
-                    <p className="text-[11px] text-[var(--text-muted)] font-medium leading-snug">{stat.label}</p>
-                  </div>
-                ))}
+              <div className="p-5 sm:p-7 rounded-3xl bg-white border border-[var(--border-subtle)] shadow-2xs">
+                <div className="grid grid-cols-3 gap-3 sm:gap-5">
+                  {[
+                    { img: "/activity_learn.jpg", title: "배움", desc: "음악 배우며 성장하기" },
+                    { img: "/activity_express.jpg", title: "표현", desc: "몸과 음악으로 나를 표현하기" },
+                    { img: "/activity_share.jpg", title: "나눔", desc: "글과 음악으로 서로 연결되기" },
+                  ].map((item) => (
+                    <div key={item.title} className="space-y-3">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={item.img}
+                        alt={item.title}
+                        className="w-full aspect-[5/4] object-cover rounded-2xl"
+                      />
+                      <div className="space-y-1">
+                        <p className="text-base sm:text-lg font-bold text-[var(--text-main)]">{item.title}</p>
+                        <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -190,35 +198,12 @@ export default function Home() {
             <div className="rounded-3xl bg-[var(--primary)] text-white border border-[var(--primary-dark)] p-8 sm:p-14 mb-16 shadow-xl relative overflow-hidden">
               <div className="max-w-3xl mx-auto text-center space-y-6 relative z-10">
                 <span className="text-[var(--accent-vibrant)] font-serif-luxury text-3xl">✦</span>
-                <h3 className="font-serif-luxury text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-snug">
-                  &ldquo;좋은 음악 한 소절과 따뜻한 문장이<br />누군가의 하루를 바꿀 수 있다고 믿습니다&rdquo;
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-snug">
+                  &ldquo;좋은 음악 한 곡, 따뜻한 문장 하나.<br />그것만으로 하루가 조금 나아질 때가 있습니다&rdquo;
                 </h3>
                 <p className="text-sm sm:text-base text-white/90 leading-loose max-w-xl mx-auto">
-                  거창하지 않아도 됩니다. 오늘 처음 코드를 짚은 손끝, 발레 바에서 처음 느끼는 중심, 책 속 한 문장에 고개를 끄덕이는 순간— 그 소소한 감각들이 모여 삶을 풍요롭게 합니다.
-                  JI.Stage가 그 순간들의 다정한 기록이 되길 바랍니다.
+                  서툴지만 조금씩 연습해서 만들어가는 연주, 몸을 깨우는 스트레칭, 책속 한 줄에 고개를 끄덕이는 순간. JI.Stage는 그런 시간을 함께 하고 싶습니다.
                 </p>
-              </div>
-            </div>
-
-            {/* 타임라인: 지금까지의 발자국 */}
-            <div className="mb-6">
-              <h3 className="font-serif-luxury text-2xl font-bold text-[var(--text-main)] mb-8 text-center">지금까지의 발자국</h3>
-              <div className="relative max-w-2xl mx-auto">
-                <div className="absolute left-5 top-0 bottom-0 w-px bg-[var(--border-strong)]" />
-                {[
-                  { year: "현재", title: "JI.Stage 아틀리에 운영", desc: "독서 앙상블, 무브먼트 클래스, 문화 살롱 및 협업 프로그램을 기획·운영 중" },
-                  { year: "[    ]", title: "독서 앙상블 살롱 런칭", desc: "책과 기타 라이브 연주를 결합한 소규모 북 살롱 모임을 정기적으로 개최" },
-                  { year: "[    ]", title: "성인 발레 & 신체 리듬 수련", desc: "음악과 몸의 연결에 집중하며 발레 바 스트레칭과 셔플댄스를 병행 수련" },
-                  { year: "[    ]", title: "음악 스튜디오 아지트 오픈", desc: "개인 음악 아틀리에를 열고 첫 동료들과 함께 소규모 공연을 시작" },
-                  { year: "[    ]", title: "기타 강의 및 공연 활동", desc: "다양한 문화 공간에서 연주와 교육을 병행하며 소통의 기쁨을 체감" },
-                ].map((item, i) => (
-                  <div key={i} className="relative pl-14 pb-8">
-                    <div className="absolute left-3 top-1 w-4 h-4 rounded-full bg-[var(--primary)] border-2 border-white shadow-sm" />
-                    <span className="text-[11px] font-bold text-[var(--primary)] tracking-wider uppercase font-serif-luxury">{item.year}</span>
-                    <h4 className="font-serif-luxury text-base font-bold text-[var(--text-main)] mt-0.5">{item.title}</h4>
-                    <p className="text-xs text-[var(--text-muted)] leading-relaxed mt-1">{item.desc}</p>
-                  </div>
-                ))}
               </div>
             </div>
           </div>
@@ -242,21 +227,6 @@ export default function Home() {
                 책과 음악, 몸과 공간이 자연스럽게 이어질 때 일상은 훨씬 풍요로워집니다.
                 살롱 모임과 워크숍을 통해 감각이 살아나는 다정한 경험을 만듭니다.
               </p>
-            </div>
-
-            {/* 핵심 철학 */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-14">
-              {[
-                { icon: "📖", title: "읽는다", desc: "좋은 책 한 권이 새로운 세계로 이어지는 문을 엽니다" },
-                { icon: "🎶", title: "연주한다", desc: "문장의 여백에 어쿠스틱 선율이 흘러 활자가 음악이 됩니다" },
-                { icon: "🤝", title: "나눈다", desc: "같은 책을 읽은 사람들이 모여 각자의 시선을 다정하게 교환합니다" },
-              ].map((item) => (
-                <div key={item.title} className="p-6 rounded-2xl bg-white border border-[var(--border-subtle)] text-center space-y-2">
-                  <span className="text-2xl">{item.icon}</span>
-                  <p className="font-serif-luxury text-base font-bold text-[var(--text-main)]">{item.title}</p>
-                  <p className="text-xs text-[var(--text-muted)] leading-snug">{item.desc}</p>
-                </div>
-              ))}
             </div>
 
             {/* 3대 프로젝트 카드 */}
