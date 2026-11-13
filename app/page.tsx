@@ -106,7 +106,7 @@ export default function Home() {
                 일상의 재미를 만들고 나누는 공간
               </h2>
               <p className="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed">
-                거창한 예술이 아니어도 괜찮습니다. 내 손끝에서 피어나는 따뜻한 기타 화음 하나,
+                내 손끝에서 만들어지는 아름다운 소리,
                 발레 바(Barre) 앞에서 곧게 세운 척추와 셔플댄스의 경쾌한 스텝,
                 그리고 마음을 건네는 책 한 구절이 모여 우리의 하루를 다정하게 채웁니다.
               </p>
