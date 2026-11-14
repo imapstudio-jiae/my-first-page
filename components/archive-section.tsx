@@ -180,14 +180,24 @@ export default function ArchiveSection() {
               <code className="px-1.5 py-0.5 rounded bg-white border border-[var(--border-subtle)] text-[var(--primary)] font-mono">data/archive.ts</code>에 유튜브 영상 주소(또는 ID)와 소개말을 추가하시면 썸네일과 팝업 플레이어가 사이트에 바로 연결됩니다.
             </p>
           </div>
-          <a
-            href={SITE_CONFIG.social.youtube.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2.5 rounded-full text-xs font-semibold bg-white border border-[var(--border-subtle)] hover:bg-[var(--primary-light)] text-[var(--text-main)] whitespace-nowrap transition-all shadow-2xs cursor-pointer"
-          >
-            유튜브 채널 바로가기 ↗
-          </a>
+          <div className="flex flex-wrap items-center gap-2">
+            <a
+              href={SITE_CONFIG.social.youtube.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2.5 rounded-full text-xs font-semibold bg-white border border-[var(--border-subtle)] hover:bg-[var(--primary-light)] text-[var(--text-main)] whitespace-nowrap transition-all shadow-2xs cursor-pointer"
+            >
+              유튜브 채널 바로가기 ↗
+            </a>
+            <a
+              href={SITE_CONFIG.social.naverBlog.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2.5 rounded-full text-xs font-semibold bg-white border border-[var(--border-subtle)] hover:bg-[var(--primary-light)] text-[var(--text-main)] whitespace-nowrap transition-all shadow-2xs cursor-pointer"
+            >
+              네이버 블로그 바로가기 ↗
+            </a>
+          </div>
         </div>
       </div>
 
